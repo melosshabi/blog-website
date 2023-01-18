@@ -54,7 +54,7 @@ function App() {
     <Router>
     <nav className="navbar">
       <div className="navbar-btns">
-        <Link to="/blog-website">Home</Link>
+        <Link to="/">Home</Link>
         {isAuth && <Link to="/createPost">Create Post</Link>}
         
       </div>
