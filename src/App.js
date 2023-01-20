@@ -84,7 +84,7 @@ function App() {
       <Route path="/blog-website" element={<Home isAuth={isAuth}/>}/>
       <Route path="/signIn" element={<SignIn isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
       <Route path="/signUp" element={<SignUp isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
-      <Route path="/createPost" element={<CreatePost isAuth={isAuth}/>}/>
+      <Route path="/blog-website/createPost" element={<CreatePost isAuth={isAuth}/>}/>
       <Route path="/userProfile" element={<UserProfile isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
       <Route path="/*" element={<PageNotFound/>}/>
     </Routes>
