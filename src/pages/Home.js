@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import '../Styles/home.css'
 import { useEffect } from 'react';
 import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
-import {db} from '../firebase-config';
+import {auth, db} from '../firebase-config';
 import trashIcon from './SVGs/trash-solid.svg';
 import plusIcon from './SVGs/plus-icon.svg';
 import {nanoid} from 'nanoid'
 
 
-export default function Home() {
+export default function Home({isAuth}) {
 
   const [postsList, setPostsList] = useState([]);
 
@@ -45,7 +45,7 @@ export default function Home() {
               <img className="post-pfp" src={post.authorDetails.authorProfilePicture} alt="text"/>
                 <p>@{post.authorDetails.authorName}</p>
               </div>
-              <div className="delete-btn-wrapper"><img className="delete-btn" src={trashIcon} onClick={() => deletePost(post.id)} alt="Trash Icon"/></div>
+              {isAuth && post.authorDetails.id === auth.currentUser.id && <div className="delete-btn-wrapper"><img className="delete-btn" src={trashIcon} onClick={() => deletePost(post.id)} alt="Trash Icon"/></div>}
               </div>
               {/* Wrapper of the post title */}
               <div className="title-wrapper">

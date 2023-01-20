@@ -81,7 +81,7 @@ function App() {
       </div>
     </div>
     <Routes>
-      <Route path="/blog-website" element={<Home/>}/>
+      <Route path="/blog-website" element={<Home isAuth={isAuth}/>}/>
       <Route path="/blog-website/signIn" element={<SignIn isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
       <Route path="/blog-website/signUp" element={<SignUp isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
       <Route path="/blog-website/createPost" element={<CreatePost isAuth={isAuth}/>}/>
