@@ -20,7 +20,7 @@ export default function CreatePost({isAuth}) {
     let profilePicture = '';
     await getDownloadURL(profilePictureRef).then(url => {
       profilePicture = url;
-  })
+  }).catch(err => console.log(err))
     await addDoc(collectionRef, {title:title, blog:blog, authorDetails:{authorName:auth.currentUser.displayName, authorEmail:auth.currentUser.email, authorProfilePicture :profilePicture,id:auth.currentUser.uid}})
     .then(()=> navigate('/blog-website'))
     

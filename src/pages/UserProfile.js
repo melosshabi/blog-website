@@ -54,7 +54,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
   async function uploadProfilePicture(file) {
     let storageRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
     await uploadBytes(storageRef, file)
-    window.location.reload();
+    await updateDocs()
   }
     //This function sends the updated data to the database
    async function saveChanges(button){
@@ -96,7 +96,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
   return (
     <div className="user-profile-page">
       <div className="loader-wrapper">
-      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+      <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
       </div>
       <div className="user-profile-sidebar">
         <h1 className='my-profile-h2'>My Profile</h1>
@@ -126,7 +126,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
             <img className="profile-picture" src={currentProfilePicture} alt="Current Profile File"/>
             <div className="profile-picture-inputs">
               <p>Profile Picture</p>
-            <input className="profile-picture-input" type="file" onChange={e => preUpload(e.target.files[0])}/> <button className="uploadBtndisabled"  disabled>Upload Image</button>
+            <input className="profile-picture-input" type="file" onChange={e => preUpload(e.target.files[0])}/> <button className="uploadBtndisabled" disabled>Upload Image</button>
             </div>
             </div>
           </div>
