@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import '../Styles/home.css'
 import { useEffect } from 'react';
 import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
-import {auth, db} from '../firebase-config';
+import {getDownloadURL, ref} from 'firebase/storage';
+import {auth, db, storage} from '../firebase-config';
 import trashIcon from './SVGs/trash-solid.svg';
 import plusIcon from './SVGs/plus-icon.svg';
 import userIcon from './SVGs/user-solid.svg';
@@ -36,12 +37,13 @@ export default function Home({isAuth}) {
       </div>
       <h1>Home Page</h1>
         {postsList && postsList.map(post =>{
+
           return (
             <div key={nanoid()} className="post">
               {/* Wrapper of user profile picture, name and the delete button */}
               <div className="author-details-wrapper">
               <div className="author-name-profile-pic-wrapper">
-                
+               
               {post.authorDetails.authorProfilePicture && <img className="post-pfp" src={post.authorDetails.authorProfilePicture} alt="text"/>}
               {!post.authorDetails.authorProfilePicture && <img className="post-pfp" src={userIcon} alt="text"/>}
                 <p>@{post.authorDetails.authorName}</p>
@@ -59,7 +61,7 @@ export default function Home({isAuth}) {
             </div>
           )
         })}
-        <button className='create-post-mobile' onClick={()=> {window.location.pathname = "/createPost"}}><img src={plusIcon} alt="text"/></button>
+        <button className='create-post-mobile' onClick={()=> {window.location.pathname = "blog-website/createPost"}}><img src={plusIcon} alt="text"/></button>
     </div>
   )
 }
