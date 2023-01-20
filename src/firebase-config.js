@@ -7,10 +7,9 @@ import { getStorage } from "firebase/storage";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-require('dotenv').config()
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: "AIzaSyApQL6vxY1dJ1frpEG6x8wgBan5U5zylZE",
   authDomain: "blog-website-f854e.firebaseapp.com",
   databaseURL: "https://blog-website-f854e-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "blog-website-f854e",
@@ -25,8 +24,3 @@ export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
 export const storage = getStorage();
 export const db = getFirestore();
-
-export function test2(){
-  // console.log("ENV:", process.env)
-  console.log("API key",firebaseConfig.apiKey)
-}
