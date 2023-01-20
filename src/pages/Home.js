@@ -8,7 +8,7 @@ import plusIcon from './SVGs/plus-icon.svg';
 import {nanoid} from 'nanoid'
 
 
-export default function Home({isAuth}) {
+export default function Home() {
 
   const [postsList, setPostsList] = useState([]);
 

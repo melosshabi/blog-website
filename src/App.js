@@ -46,16 +46,16 @@ function App() {
     <nav className="navbar">
       <div className="navbar-btns">
         <Link to="/blog-website">Home</Link>
-        {isAuth && <Link to="/createPost" isAuth={isAuth}>Create Post</Link>}
+        {isAuth && <Link to="/blog-website/createPost" isAuth={isAuth}>Create Post</Link>}
       </div>
       <div className="navbar-sign-in-out">
-      {!isAuth && <Link to="/signUp">Sign Up</Link>}
-      {!isAuth && <Link to="/signIn">Sign in</Link>}
+      {!isAuth && <Link to="/blog-website/signUp">Sign Up</Link>}
+      {!isAuth && <Link to="/blog-website/signIn">Sign in</Link>}
       {isAuth && <div className='username-profilebtn-wrapper'>
         <button className="view-profile-btn" onClick={expandViewProifleDiv}>{localStorage.getItem('name')}<img className="caret" src={caret} alt="text"/></button>
-          <div className="view-profile-div"><Link to="/userProfile" onClick={shrinkProfileDiv}>View Profile</Link></div>
+          <div className="view-profile-div"><Link to="blog-website/userProfile" onClick={shrinkProfileDiv}>View Profile</Link></div>
         </div>}
-      {isAuth && <Link to="/signIn" onClick={logOut}>Sign Out</Link>}
+      {isAuth && <Link to="blog-website/signIn" onClick={logOut}>Sign Out</Link>}
       </div>
       <button className="sidebar-btn" onClick={toggleSidebar}>
         <div className="hamburger-menu">
@@ -70,22 +70,22 @@ function App() {
     <div className="sidebar">
       <div className="sidebar-btns">
         <Link onClick={toggleSidebar} to="/blog-website">Home</Link>
-        {isAuth && <Link onClick={toggleSidebar} to="/createPost">Create post</Link>}
-        {isAuth && <Link onClick={toggleSidebar} to="/userProfile">View Profile</Link>}
+        {isAuth && <Link onClick={toggleSidebar} to="blog-website/createPost">Create post</Link>}
+        {isAuth && <Link onClick={toggleSidebar} to="blog-website/userProfile">View Profile</Link>}
       </div>
       <div className="sidebar-sign-in-out">
-      {!isAuth && <Link to="/signUp">Sign Up</Link>}
-      {!isAuth && <Link to="/signIn">Sign in</Link>}
-      {isAuth && <Link to="/signIn" onClick={logOut}>Sign Out</Link>}
+      {!isAuth && <Link to="blog-website/signUp">Sign Up</Link>}
+      {!isAuth && <Link to="blog-website/signIn">Sign in</Link>}
+      {isAuth && <Link to="blog-website/signIn" onClick={logOut}>Sign Out</Link>}
       {isAuth && <p>{localStorage.getItem('email')}</p>}
       </div>
     </div>
     <Routes>
-      <Route path="/blog-website" element={<Home isAuth={isAuth}/>}/>
-      <Route path="/signIn" element={<SignIn isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
-      <Route path="/signUp" element={<SignUp isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
-      <Route path="/createPost" element={<CreatePost isAuth={isAuth}/>}/>
-      <Route path="/userProfile" element={<UserProfile isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
+      <Route path="/blog-website" element={<Home/>}/>
+      <Route path="/blog-website/signIn" element={<SignIn isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
+      <Route path="/blog-website/signUp" element={<SignUp isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
+      <Route path="/blog-website/createPost" element={<CreatePost isAuth={isAuth}/>}/>
+      <Route path="/blog-website/userProfile" element={<UserProfile isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
       <Route path="/*" element={<PageNotFound/>}/>
     </Routes>
     </Router>
