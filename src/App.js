@@ -15,7 +15,7 @@ function App() {
 
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
   const logOut = async () =>{
-    await signOut(auth).then(()=>{localStorage.clear(); setIsAuth(false); window.location.pathname="/signIn"})
+    await signOut(auth).then(()=>{localStorage.clear(); setIsAuth(false); window.location.pathname="/blog-website/signIn"})
   }
   document.addEventListener('DOMContentLoaded', ()=>{
     if(isAuth){
