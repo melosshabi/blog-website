@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+html{
+  overflow-x: hidden;
+}
 *{
   margin:0;
   padding:0;
-
 }
 .App {
   text-align: center;
@@ -13,6 +15,7 @@ body{
 }
 .navbar{
   height: 6vh;
+  width: 100vw;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -20,14 +23,17 @@ body{
   font-size: 1.1em;
   font-weight: 350;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, .5);
+  position: absolute;
+  top:0;
+  z-index: 1;
 }
 .navbar-sign-in-out{
-  width: 20%;
+  width: 15%;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 1%;
+  margin-right: 3%;
 }
 .navbar-sign-in-out a{
   text-decoration: none;
@@ -42,27 +48,28 @@ body{
   color:white;
 }
 .username-profilebtn-wrapper{
-  width: 47%;
+  position: relative;
 }
-.username-profilebtn-wrapper button{
+.view-profile-btn{
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   cursor: pointer;
   background: none;
   border:none;
   font-size: 1.1em;
-  position: relative;
 }
 .caret{
   width: 10px;
+  margin-left: 10px;
 }
 .view-profile-div{
-  width: 135px;
+  width: 100%;
   height: 0px;
   background-color: black;
   position: absolute;
+  left: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,241 +98,6 @@ body{
   color:black;
   text-decoration: none;
 }
-.signInPage-div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top:5%;
-}
-.gradient-div{
-  width: 40%;
-  height: 80vh;
-  background: linear-gradient(65deg, #dcc2fd, #71b7fd, #adc2f6);
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-.sign-in-div{
-  width: 40%;
-  height: 80vh;
-  background-color: white;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  font-family: 'Open Sans', sans-serif;
-}
-.sign-in-div h2{
-  margin-top:10%;
-  margin-left: 15%;
-}
-.sign-in-div p{
-  margin-top: 1%;
-  margin-left: 15%;
-}
-.sign-in-inputs{
-  height: 50%;
-  width: 55%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 15%;
-}
-.sign-in-inputs p{
-  margin-top: 2%;
-  margin-left: 0%;
-}
-.input-fields{
-  width: 100%;
-  height: 40%;
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.input-fields input{
-  padding:8px 13px;
-  border:1px solid rgba(0, 0, 0, 1);
-  border-radius: 5px;
-  font-size: 1.1em;
-}
-.sign-in-btn{
-  background:linear-gradient(to right, #5fadfb, #615efa, #9a8cfc) ;
-  width: 90%;
-  margin:auto;
-  font-size: 1.5em;
-  color:white;
-  border:none;
-  border-radius: 8px;
-  padding:12px 30px;
-  cursor: pointer;
-}
-.dont-have-acc{
-  width: 55%;
-  margin-left: 15%;
-  margin-bottom: 1%;
-  display: flex;
-  justify-content: center;
-}
-.dont-have-acc a{
-  margin-left: 2%;
-  color:#6098fb;
-}
-.border-div{
-  height: 1px;
-  width: 55%;
-  margin-left:15%;
-  margin-bottom: 5%;
-  background-color: black;
-}
-.google-btn{
-  width: 40%;
-  margin-left:19%;
-  padding:12px 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border:1px solid rgba(0, 0, 0, .5);
-  border-radius: 8px;
-  cursor: pointer;
-}
-.google-icon{
-  position: inline-block;
-  vertical-align: middle;
-  margin-right: -60px;
-}
-.btn-text{
-  position:inline-block;
-  vertical-align: middle;
-}
-.createPost-container{
-  width: 50%;
-  height: 80vh;
-  margin:auto;
-  margin-top:5%;
-  font-size: 1.2em;
-  background-color: white;
-  border-radius: 8px;
-  font-family: 'Open Sans', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.createPost-container h1{
-  margin-top:10px;
-  margin-bottom:5%;
-}
-.cp-inputs{
-  height: 100%;
-  width: 80%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.input-cp{
-  width: 75%;
-  display: flex;
-  align-items: center;
-  margin:10px;
-  margin-left:10%;
-}
-.input-cp label{
-  margin-right: 25px;
-}
-.input-cp:last-child{
-  display: flex;
-  align-items: flex-start;
-}
-.input-cp input{
-  width: 410px;
-  font-size: .9em;
-  border:1px solid black;
-  border-radius: 5px;
-  padding:5px 10px;
-}
-.input-cp input:focus{
-  outline:none;
-}
-.input-cp textarea{
-  font-size: 1em;
-  border:1px solid black;
-  border-radius: 5px;
-  padding:5px 10px;
-  height: 450px;
-  max-height: 450px;
-  width: 409px;
-  max-width: 409px;
-}
-.input-cp textarea:focus{
-  outline:none
-}
-.button-wrapper{
-  width: 90%;
-  height: 50%;
-  margin-left: 6%;
-  display: flex;
-}
-.submit-blog{
-  background:linear-gradient(to right, #5fadfb, #615efa, #9a8cfc) ;
-  width: 50%;
-  margin:auto;
-  font-size: 1.5em;
-  color:white;
-  border:none;
-  border-radius: 8px;
-  padding:12px 30px;
-  cursor: pointer;
-}
-.home-page-container{
-  width: 50%;
-  margin:auto;
-  margin-top:2%;
-  font-family: 'Open Sans', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.home-page-container h1{
-  margin-bottom: 5%;
-}
-.post{
-  width: 60%;
-  margin-bottom:5%;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  position:relative;
-  border: 1px solid rgba(0, 0, 0, .5);
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
-  padding:20px 30px;
-}
-.post-title{
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  width: 100%;
-  text-align: center;
-  margin-top: 10%;
-  padding:5% calc(6% - 3px);
-}
-.post-pfp{
-  position: absolute;
-  left:10px;
-}
-.delete-btn{
-  width: 30px;
-  background: none;
-  border:none;
-  position: absolute;
-  top:10px;
-  right:10px;
-  cursor: pointer;
-}
-#blog{
-  margin-bottom: 10%;;
-}
-#author{
-  position:absolute;
-  top:25px;
-  left:40px;
-}
 .hamburger-menu{
   display: none;
 }
@@ -335,146 +107,27 @@ body{
 .sidebar-btn{
   display: none;
 }
-.create-post-mobile{
-  display: none;
-}
-.page-not-found{
-  width: 100vw;
-  height: 30vh;
-  font-family: 'Open Sans', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.page-not-found a{
-  color:#6098fb
-}
-.user-profile-page{
-  height: 90vh;
-  width: 95vw;
-  background-color: rgb(255, 255, 255);
-  border-radius: 8px;
-  margin:auto;
-  margin-top: 1%;
-  box-shadow: 2px 2px 5px black;
-  display: flex;
-  align-items: center;
-  font-family: "Open Sans", sans-serif;
-}
-.user-profile-sidebar{
-  /* background-color: cyan; */
-  width: 15%;
-  height: 90%;
-  border-right: 1px solid black;
-}
-.my-profile-h2{
-  text-align: center;
-  margin:10% 0;
-}
-.user-icon-wrapper{
-  height: 6%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5em;
-  padding: 15px 0;
-  cursor: pointer;
-  transition: all 200ms;
-}
-.user-icon-wrapper label{
-  cursor: pointer;
-}
-.user-icon-wrapper:hover{
-  background-color: #ebebeb;
-}
-.user-icon{
-  width: 25px;
-  height: 22px;
-  margin-right: 10px;
-}
-.user-profile-data{
-  height: 90%;
-  width: 80%;
-  margin:auto;
-}
-.user-profile-data h1{
-  text-align: center;
-  padding: 2% 0;
-  border-bottom: 1px solid black;
-}
-.user-info{
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  /* background-color: cyan; */
-}
-.user-info input{
-  font-size: 1.2em;
-  padding:10px 15px;
-  border: 1px solid black;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px black;
-}
-.full-name-wrapper, .email-wrapper, .password-wrapper{
-  position: relative;
-  height: 17%;
-}
-.edit-btn{
-  position: absolute;
-  bottom:0;
-  right: 0;
-  background: none;
-  border:none;
-  color:rgba(0, 150, 150);
-  cursor: pointer;
-}
-.edit-btn:hover{
-  text-decoration: underline;
-}
-.save-btn{
-  position: absolute;
-  left: 0;
-  bottom:0;
-  background: none;
-  border:none;
-  color:rgba(0, 150, 150);
-  cursor: pointer;
-  display: none;
-}
-.save-btn:hover{
-  text-decoration: underline;
-}
-@media(max-width:1920px){
-  .navbar-sign-in-out{
-    width: 15%;
-  }
-}
+
 @media(max-width:1280px){
   html{
     max-width: 100vw;
     overflow-x: hidden;
   }
-  #root{
-    max-width: 93vw;
-  }
   .navbar{
     width: 100vw;
-    height: 10vh;
+    height: 8vh;
   }
   .navbar-btns{
     width: 15%;
   }
   .navbar-sign-in-out{
-    margin-right: 2%;
-    width: 25%;
+    width: 30%;
+  }
+  .username-profilebtn-wrapper{
+    min-width: 50%;
   }
   .navbar-sign-in-out a{
     padding:5px 5px;
-  }
-  .post-title{
-    padding:5% calc(9% - 2px);
   }
 }
 @media(max-width:1024px){
@@ -490,43 +143,8 @@ body{
   .navbar-btns{
     width: 20%;
   }
-  .gradient-div{
-    display: none;
-  }
-  .signInPage-div{
-    height: 100vh;
-    width: 100vw;
-    margin-top: 0;
-  }
-  .sign-in-div{
-    height: 95%;
-    width: 95%;
-    margin-top: 0;
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px black;
-  }
-  .sign-in-div h2{
-    margin-top:5%;
-  }
-  .input-fields{
-    margin-top: -3%;
-  }
-  .sign-in-btn{
-    margin-top: 5%;
-    margin-bottom: 0;
-  }
-  .border-div{
-    margin-top:-5%;
-    margin-bottom:5%;
-  }
   .home-page-container{
     width: 80%;
-  }
-  .post{
-    width: 60%;
-  }
-  .post-title{
-    padding:5% 7%;
   }
 }
 @media(max-width:912px){
@@ -537,73 +155,17 @@ body{
     width: 35%;
   }
   .navbar-sign-in-out{
-    width: 50%;
+    width: 30%;
+    margin-right: 5%;
   }
   .navbar-btns{
     width: 30%;
   }
-  .home-page-container{
-    width: 90%;
-  }
-  #blog{
-    margin-bottom: 20%;
-  }
-  .post p{
-    font-size: 1.5em;
-  }
-  .signInPage-div{
-    height: 50vh;
-    margin-top: 20%;
-  }
-  .sign-in-div h2{
-    font-size: 2.5em;
-  }
-  .sign-in-div p{
-    font-size: 1.4em;
-  }
-  .sign-in-div{
-    height: 50vh;
-    margin-top: 0;
-  }
-  .input-fields input{
-    font-size: 1.5em;
-  }
-  .sign-in-btn{
-    font-size: 2em;
-    margin-top: 10%;
-  }
-  .border-div{
-    margin-top:-5%;
-  }
-  .createPost-container{
-    width: 95%;
-    margin-left: 6%;
-  }
-  .cp-inputs{
-    width: 100%;
-  }
-  .input-cp{
-    width: 80vw;
-    font-size: 1.5em;
-  }
-  .input-cp input{
-    width: 80%;
-  }
-  .input-cp textarea{
-    width: 80%;
-    max-width: 80%;
-  }
-  .submit-blog{
-    width: 40vw;
-    margin-left: 25%;
-    font-size: 2em;
-    padding: 15px;
-  }
-  .post-title{
-    padding: 5% 7%;
-  }
 }
 @media(max-width:540px){
+  .navbar-btns a:last-of-type{
+    display: none;
+  }
   .navbar{
     width: 100vw;
     height: 7vh;
@@ -613,16 +175,6 @@ body{
   }
   .navbar a, .navbar p{
     font-size: 1em;
-  }
-  .sidebar-btn{
-    width: 50px;
-    height: 50px;
-    margin-right: 1%;
-    background: none;
-    border:none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .hamburger-menu{
     height: 22px;
@@ -646,22 +198,30 @@ body{
   }
   .sidebar{
     height: 93vh;
-    width: 65%;
+    width: 70%;
     position: absolute;
     right: 0px;
+    top:7vh;
     background-color: #f6faff;
     box-shadow: 0px 1px 3px black;
     font-family: 'Open Sans', sans-serif;
-    z-index: 2;
+    z-index: 5;
     display: none;
     flex-direction: column;
     justify-content: space-between;
   }
-  .active{
+  .sidebar-btn{
+    width: 50px;
+    height: 50px;
+    margin-right: 1%;
+    background: none;
+    border:none;
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .sidebar-btns{
-    height: 15%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -671,6 +231,7 @@ body{
     text-decoration: none;
     text-align: center;
     padding:10px 15px;
+    border:1px solid black;
     background-color: rgba(255, 255, 255, .5);
   }
   .sidebar-sign-in-out{
@@ -679,7 +240,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
   }
   .sidebar-sign-in-out a{
     color:black;
@@ -691,212 +251,16 @@ body{
   .sidebar-sign-in-out p{
     margin-right: 5px;
   }
-  .home-page-container{
-    margin-left: 10%;
-  }
-  .post{
-    width: 90%;
-  }
-  .post h2{
-    font-size: 1.4em;
-  }
-  #blog , #author{
-    font-size: 1.1em;
-  }
-  .signInPage-div{
-    height: 100vh;
-    margin-top: 0;
-  }
-  .sign-in-div{
-    height: 95%;
-    width: 95%;
-  }
-  .sign-in-div h2{
-    font-size: 2em;
-  }
-  .sign-in-div p{
-    font-size: 1em;
-  }
-  .input-fields{
-    width: 70vw;
-    margin-left: 25%;
-  }
-  .input-fields input{
-    font-size: 1.1em;
-  }
-  .sign-in-btn{
-    width: 65vw;
-    font-size: 1.3em;
-  }
-  .border-div{
-    margin-left: 11%;
-    margin-top: -15%;
-    width: 75vw;
-  }
-  .google-btn{
-    width: 45vw;
-  }
-  .createPost-container{
-    width: 95vw;
-    height: 90vh;
-    margin-left: 3%;
-    margin-top: 2%;
-  }
-  .input-cp:last-of-type{
-    height: 52vh;
-  }
-  .input-cp textarea{
-    max-height: 50vh;
-  }
-  .createPost-container h1{
-    font-size: 1.5em;
-  }
-  .cp-inputs{
-    font-size: .7em;
-    margin-bottom: 0;;
-  }
-  .button-wrapper{
-    margin-top:0;
-  }
-  .submit-blog{
-    font-size: 1.1em;
-  }
-  .border-div{
-    margin-top:3%
-  }
-  .dont-have-acc{
-    width: 70%;
-  }
-  .input-fields{
-    height: 50%;
+  .active{
+    display: flex;
   }
 }
 @media(max-width:414px){
-  html, body{
-    margin:0 auto;
-    overflow-x: hidden;
-  }
-  .navbar-sign-in-out{
-    width: 10%;
-  }
-  .navbar-sign-in-out p, .navbar-sign-in-out a {
-    display: none;
-  }
   .navbar-btns a:last-of-type{
     display: none;
   }
-  .sidebar-btn{
-    display: block;
-  }
   .sidebar{
-    width: 90%;
-    height: 85vh;
-  }
-  .sidebar-btns{
-    height: 25%;
-  }
-  .sidebar-btns a{
-    border:1px solid black;
-  }
-  .sidebar-sign-in-out{
-    width: 99%;
-  }
-  .home-page-container{
-    margin-left: 9%;
-  }
-  .post{
-    width: 95%;
-    margin-left: 0;
-  }
-  .delete-btn{
-    width: 25px;
-  }
-  .signInPage-div{
-    margin-top: 20%;
-    height: 80vh;
-    width: 100vw;
-  }
-  .sign-in-div{
-    width: 99%;
-  }
-  .sign-in-div h2, .sign-in-div p{
-    margin-left: 4%;
-    margin-bottom: 3%;
-  }
-  .sign-in-inputs p{
-    color:red;
-    margin-top:-6%;
-    margin-left: 15%;
-  }
-  .input-fields{
     width: 90vw;
-    height: 35%;
-    margin-bottom: 10%;
-  }
-  .google-btn{
-    width: 60vw;
-    display: flex;
-    justify-content: center;
-    margin-left: 10%;
-  }
-  .google-icon-wrapper{
-    width: 10%;
-  }
-  .create-post-mobile{
-    display: block;
-    position: fixed;
-    left:10px;
-    bottom: 10px;
-    box-shadow: 0px 0px 5px black;
-  }
-  .create-post-mobile{
-    background: white;
-    border:none;
-    border-radius: 50%;
-  }
-  .create-post-mobile img{
-    width: 60px;
-  }
-  .createPost-container{
-    width: 95vw;
-    height: 85vh;
-    margin-top: 5%;
-    margin-left: 3%;
-    box-shadow: 2px 2px 5px black;
-  }
-  .cp-inputs{
-    width: 100%;
-    margin-left: 0;
-  }
-  .input-cp{
-    margin-left: 0;
-    width: 95%;
-  }
-  .submit-blog{
-    width: 60vw;
-  }
-  .createPost-container{
-    width: 100vw;
-    margin-left:0;
-    margin-top: 5%;
-  }
-  .submit-blog{
-    margin-left: 19%;
-  }
-  .post-title{
-    padding:5% 9%;
-  }
-  .post{
-    margin-left: -10px;
-  }
-  .border-div{
-    margin-top:3%
-  }
-  .dont-have-acc{
-    width: 90%;
-  }
-  .input-fields{
-    height: 50%;
   }
 }
 @media(max-width:360px){
@@ -912,68 +276,7 @@ body{
   .sidebar-btn{
     display: block;
   }
- .post{
-  width: 95%;
- }
- .delete-btn{
-  right: 1px;
-  top:1px;
- }
- .post h2{
-  font-size: 1.3em;
- }
- .createPost-container{
-  width: 100vw;
-  height: 75vh;
-  margin-top: 15%;
-  margin-left: 0;
- }
- .createPost-container h1{
-  font-size: 1.5em;
- }
- .submit-blog{
-  width: 85%;
-  font-size: 1em;
- }
- #blog{
-  height: 40vh;
- }
- .createPost-container{
-  width: 95vw;
-  height: 85vh;
-  margin-top: 5%;
-  margin-left: 3%;
-  box-shadow: 2px 2px 5px black;
-}
-.cp-inputs{
-  width: 100%;
-  margin-left: 0;
-}
-.input-cp{
-  margin-left: 0;
-  width: 95%;
-}
-.submit-blog{
-  width: 60vw;
-}
-.createPost-container{
-  width: 100vw;
-  margin-left:0;
-  margin-top: 5%;
-}
-.submit-blog{
-  margin-left: 19%;
-}
-.post{
-  overflow: scroll;
-}
-.border-div{
-  margin-top:3%
-}
-.dont-have-acc{
-  width: 90%;
-}
-.input-fields{
-  height: 50%;
-}
+  .title-wrapper{
+    font-size:.9em;
+  }
 }

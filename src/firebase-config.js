@@ -7,6 +7,7 @@ import { getStorage } from "firebase/storage";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+require('dotenv').config()
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -25,6 +26,7 @@ export const provider = new GoogleAuthProvider();
 export const storage = getStorage();
 export const db = getFirestore();
 
-export function test(){
-  console.log(firebaseConfig.apiKey)
+export function test2(){
+  // console.log("ENV:", process.env)
+  console.log("API key",firebaseConfig.apiKey)
 }

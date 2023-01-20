@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import '../Styles/sign-in.css'
 import {signInWithEmailAndPassword, signInWithPopup} from 'firebase/auth'
 import {auth, provider} from '../firebase-config'
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +10,7 @@ export default function SignIn({isAuth, setIsAuth}) {
     if(isAuth){
       navigate('/blog-website')
     }
-  }, [])
+  })
   const [signInEmail, setSignInEmail] =  useState('');
   const [signInPassword, setSignInPassword] =  useState('');
   const [error, setError] = useState('');

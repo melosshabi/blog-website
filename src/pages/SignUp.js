@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import '../Styles/sign-in.css'
 import {createUserWithEmailAndPassword, signInWithPopup, updateProfile} from 'firebase/auth';
 import {auth, provider} from '../firebase-config'
 import { useNavigate } from 'react-router-dom';
@@ -67,7 +68,7 @@ export default function SignUp({isAuth, setIsAuth}) {
       <br/>
       <div className="sign-in-inputs">
         <div className="input-fields">
-        <input type="text" placeholder='Name' value={registerName} onChange={e=>setRegisterName(e.target.value)}/>
+        <input type="text" placeholder='Name' value={registerName} onChange={e=>setRegisterName(e.target.value)} maxLength="25"/>
         <input type="text" placeholder='Email' value={registerEmail} onChange={e => setRegisterEmail(e.target.value)}/> 
         <input type="password" placeholder='Password' value={registerPassword} onChange={e => setRegisterPassword(e.target.value)}/> 
         

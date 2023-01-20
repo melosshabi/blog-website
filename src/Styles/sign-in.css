@@ -1,0 +1,248 @@
+.signInPage-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:5%;
+  }
+  .gradient-div{
+    width: 40%;
+    height: 80vh;
+    background: linear-gradient(65deg, #dcc2fd, #71b7fd, #adc2f6);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .sign-in-div{
+    width: 40%;
+    height: 80vh;
+    background-color: white;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .sign-in-div h2{
+    margin-top:10%;
+    margin-left: 15%;
+  }
+  .sign-in-div p{
+    margin-top: 1%;
+    margin-left: 15%;
+  }
+  .sign-in-inputs{
+    height: 50%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15%;
+  }
+  .sign-in-inputs p{
+    margin-top: 2%;
+    margin-left: 0%;
+  }
+  .input-fields{
+    width: 100%;
+    height: 40%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .input-fields input{
+    padding:8px 13px;
+    border:1px solid rgba(0, 0, 0, 1);
+    border-radius: 5px;
+    font-size: 1.1em;
+  }
+  .sign-in-btn{
+    background:linear-gradient(to right, #5fadfb, #615efa, #9a8cfc) ;
+    width: 90%;
+    margin:auto;
+    font-size: 1.5em;
+    color:white;
+    border:none;
+    border-radius: 8px;
+    padding:12px 30px;
+    cursor: pointer;
+  }
+  .dont-have-acc{
+    width: 55%;
+    margin-left: 15%;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+  }
+  .dont-have-acc a{
+    margin-left: 2%;
+    color:#6098fb;
+  }
+  .border-div{
+    height: 1px;
+    width: 55%;
+    margin-left:15%;
+    margin-bottom: 5%;
+    background-color: black;
+  }
+  .google-btn{
+    width: 40%;
+    margin-left:19%;
+    padding:12px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid rgba(0, 0, 0, .5);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .google-icon{
+    position: inline-block;
+    vertical-align: middle;
+    margin-right: -60px;
+  }
+  .btn-text{
+    position:inline-block;
+    vertical-align: middle;
+  }
+
+@media(max-width:1024px){
+    .signInPage-div{
+        height: 100vh;
+        width: 100vw;
+        margin-top: 0;
+      }
+      .sign-in-div{
+        height: 95%;
+        width: 95%;
+        margin-top: 0;
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px black;
+      }
+      .sign-in-div h2{
+        margin-top:5%;
+      }
+      .input-fields{
+        margin-top: -3%;
+        height: 50%;
+      }
+      .sign-in-btn{
+        margin-top: 5%;
+        margin-bottom: 0;
+      }
+      .border-div{
+        margin-top:-5%;
+        margin-bottom:5%;
+      }
+      .gradient-div{
+        display: none;
+      }
+}
+@media(max-width:912px){
+    .signInPage-div{
+        height: 50vh;
+        margin-top: 20%;
+      }
+      .sign-in-div{
+        height: 60vh;
+        margin-top: 0;
+      }
+      .sign-in-div h2{
+        font-size: 2.5em;
+      }
+      .sign-in-div p{
+        font-size: 1.4em;
+      }
+      .input-fields input{
+        font-size: 1.5em;
+      }
+      .sign-in-btn{
+        font-size: 2em;
+        margin-top: 10%;
+      }
+      .border-div{
+        margin-top:-5%;
+      }
+}
+@media(max-width:540px){
+    .signInPage-div{
+        height: 100vh;
+        margin-top: 0;
+      }
+      .sign-in-div{
+        height: 95%;
+        width: 95%;
+      }
+      .sign-in-div h2{
+        font-size: 2em;
+      }
+      .sign-in-div p{
+        font-size: 1em;
+      }
+      .input-fields{
+        width: 70vw;
+        margin-left: 25%;
+      }
+      .input-fields input{
+        font-size: 1.1em;
+      }
+      .sign-in-btn{
+        width: 65vw;
+        font-size: 1.3em;
+        margin-bottom: -10%;
+      }
+      .border-div{
+        margin-left: 11%;
+        margin-top: 2%;
+        width: 75vw;
+      }
+      .google-btn{
+        width: 45vw;
+      }
+      .dont-have-acc{
+        padding-left: 10%;
+      }
+}
+@media(max-width:414px){
+    .signInPage-div{
+        margin-top: 20%;
+        height: 80vh;
+        width: 100vw;
+      }
+      .sign-in-div{
+        width: 99%;
+      }
+      .sign-in-div h2, .sign-in-div p{
+        margin-left: 4%;
+        margin-bottom: 3%;
+      }
+      .sign-in-inputs p{
+        margin-top:-6%;
+        margin-left: 15%;
+      }
+      .input-fields{
+        width: 90vw;
+        height: 45%;
+        margin-bottom: 10%;
+      }
+      .dont-have-acc{
+        width: 60%;
+        padding-left: 16%;
+      }
+      .google-btn{
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+        margin-left: 10%;
+      }
+      .google-icon-wrapper{
+        width: 10%;
+      }
+}
+@media(max-width:360px){
+    .sign-in-div{
+        height: 80vh;
+        margin-top: -10%;
+    }
+    .dont-have-acc{
+        width: 90%;
+        padding-left:0;
+    }
+}

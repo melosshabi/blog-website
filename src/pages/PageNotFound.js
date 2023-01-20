@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import '../Styles/page-not-found.css';
 
 export default function PageNotFound() {
     useEffect(() =>{
