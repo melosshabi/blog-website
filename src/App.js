@@ -74,8 +74,8 @@ function App() {
         {isAuth && <Link onClick={toggleSidebar} to="/blog-website/userProfile">View Profile</Link>}
       </div>
       <div className="sidebar-sign-in-out">
-      {!isAuth && <Link to="/blog-website/signUp">Sign Up</Link>}
-      {!isAuth && <Link to="/blog-website/signIn">Sign in</Link>}
+      {!isAuth && <Link to="/blog-website/signUp" onClick={toggleSidebar}>Sign Up</Link>}
+      {!isAuth && <Link to="/blog-website/signIn" onClick={toggleSidebar}>Sign in</Link>}
       {isAuth && <Link to="/blog-website" onClick={logOut}>Sign Out</Link>}
       {isAuth && <p>{localStorage.getItem('email')}</p>}
       </div>
