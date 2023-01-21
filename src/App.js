@@ -15,7 +15,7 @@ function App() {
 
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
   const logOut = async () =>{
-    await signOut(auth).then(()=>{localStorage.clear(); setIsAuth(false); window.location.pathname="/blog-website/signIn"})
+    await signOut(auth).then(()=>{localStorage.clear(); setIsAuth(false); })
   }
   document.addEventListener('DOMContentLoaded', ()=>{
     if(isAuth){
@@ -55,7 +55,7 @@ function App() {
         <button className="view-profile-btn" onClick={expandViewProifleDiv}>{localStorage.getItem('name')}<img className="caret" src={caret} alt="text"/></button>
           <div className="view-profile-div"><Link to="blog-website/userProfile" onClick={shrinkProfileDiv}>View Profile</Link></div>
         </div>}
-      {isAuth && <Link to="blog-website/signIn" onClick={logOut}>Sign Out</Link>}
+      {isAuth && <Link to="/blog-website" onClick={logOut}>Sign Out</Link>}
       </div>
       <button className="sidebar-btn" onClick={toggleSidebar}>
         <div className="hamburger-menu">
@@ -70,13 +70,13 @@ function App() {
     <div className="sidebar">
       <div className="sidebar-btns">
         <Link onClick={toggleSidebar} to="/blog-website">Home</Link>
-        {isAuth && <Link onClick={toggleSidebar} to="blog-website/createPost">Create post</Link>}
-        {isAuth && <Link onClick={toggleSidebar} to="blog-website/userProfile">View Profile</Link>}
+        {isAuth && <Link onClick={toggleSidebar} to="/blog-website/createPost">Create post</Link>}
+        {isAuth && <Link onClick={toggleSidebar} to="/blog-website/userProfile">View Profile</Link>}
       </div>
       <div className="sidebar-sign-in-out">
-      {!isAuth && <Link to="blog-website/signUp">Sign Up</Link>}
-      {!isAuth && <Link to="blog-website/signIn">Sign in</Link>}
-      {isAuth && <Link to="blog-website/signIn" onClick={logOut}>Sign Out</Link>}
+      {!isAuth && <Link to="/blog-website/signUp">Sign Up</Link>}
+      {!isAuth && <Link to="/blog-website/signIn">Sign in</Link>}
+      {isAuth && <Link to="/blog-website" onClick={logOut}>Sign Out</Link>}
       {isAuth && <p>{localStorage.getItem('email')}</p>}
       </div>
     </div>

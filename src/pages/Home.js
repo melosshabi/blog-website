@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import '../Styles/home.css'
 import { useEffect } from 'react';
 import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
@@ -37,7 +38,7 @@ export default function Home({isAuth}) {
       </div>
       <h1>Home Page</h1>
         {postsList && postsList.map(post =>{
-
+        
           return (
             <div key={nanoid()} className="post">
               {/* Wrapper of user profile picture, name and the delete button */}
@@ -61,7 +62,7 @@ export default function Home({isAuth}) {
             </div>
           )
         })}
-        <button className='create-post-mobile' onClick={()=> {window.location.pathname = "blog-website/createPost"}}><img src={plusIcon} alt="text"/></button>
+        {isAuth && <Link className='create-post-mobile' to="/blog-website/createPost"><img src={plusIcon} alt="text"/></Link>}
     </div>
   )
 }
