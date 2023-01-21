@@ -3,13 +3,11 @@ import {Link} from 'react-router-dom'
 import '../Styles/home.css'
 import { useEffect } from 'react';
 import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
-import {getDownloadURL, ref} from 'firebase/storage';
 import {auth, db, storage} from '../firebase-config';
 import trashIcon from './SVGs/trash-solid.svg';
 import plusIcon from './SVGs/plus-icon.svg';
 import userIcon from './SVGs/user-solid.svg';
 import {nanoid} from 'nanoid'
-
 
 export default function Home({isAuth}) {
 

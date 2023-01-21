@@ -224,16 +224,10 @@
       }
       .dont-have-acc{
         width: 60%;
-        padding-left: 16%;
+        padding-left: 14%;
       }
       .google-btn{
-        width: 60vw;
-        display: flex;
-        justify-content: center;
-        margin-left: 10%;
-      }
-      .google-icon-wrapper{
-        width: 10%;
+       display: none;
       }
 }
 @media(max-width:360px){

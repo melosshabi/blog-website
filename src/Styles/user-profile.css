@@ -76,6 +76,7 @@
     margin:auto;
     margin-top: 8vh;
     box-shadow: 2px 2px 5px black;
+    background-color: white;
     display: flex;
     align-items: center;
     font-family: "Open Sans", sans-serif;

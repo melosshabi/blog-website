@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import '../Styles/sign-in.css'
-import {signInWithEmailAndPassword, signInWithPopup} from 'firebase/auth'
+import {signInWithEmailAndPassword, signInWithPopup, signInWithRedirect} from 'firebase/auth'
 import {auth, provider} from '../firebase-config'
 import { useNavigate } from 'react-router-dom';
 
@@ -16,7 +16,6 @@ export default function SignIn({isAuth, setIsAuth}) {
   const [error, setError] = useState('');
 
   const logIn = async () =>{
-  
     try {
     await signInWithEmailAndPassword(auth, signInEmail, signInPassword)
     .then((res ) => { 
@@ -45,6 +44,7 @@ export default function SignIn({isAuth, setIsAuth}) {
       navigate('/blog-website')
     })
   }
+  console.log(window.screen.height)
   return (
     <div className="signInPage-div">
     <div className="gradient-div"></div>
