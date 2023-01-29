@@ -4,7 +4,6 @@ import '../Styles/page-not-found.css';
 export default function PageNotFound() {
     useEffect(() =>{
         let navbar = document.getElementsByClassName('navbar')[0];
-        console.log(navbar)
         navbar.style.display = "none";
     }, [])
      
