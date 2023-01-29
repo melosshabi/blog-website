@@ -265,7 +265,7 @@ body{
 }
 @media(max-width:360px){
   .sidebar{
-    height: 93vh;
+    height: 90vh;
   }
   .navbar-btns{
     width: 50%;
