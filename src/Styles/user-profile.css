@@ -90,7 +90,7 @@
     text-align: center;
     margin:10% 0;
   }
-  .user-icon-wrapper{
+  .user-icon-wrapper, .my-posts-wrapper{
     height: 6%;
     display: flex;
     align-items: center;
@@ -99,17 +99,28 @@
     padding: 15px 0;
     cursor: pointer;
     transition: all 200ms;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 5%;
   }
-  .user-icon-wrapper label{
-    cursor: pointer;
-  }
-  .user-icon-wrapper:hover{
+  .user-icon-wrapper:hover, .my-posts-wrapper:hover{
     background-color: #ebebeb;
   }
-  .user-icon{
+  .my-posts-wrapper a{
+    text-decoration: none;
+    color:black;
+  }
+  .user-icon-wrapper label, .my-posts-wrapper label{
+    cursor: pointer;
+  }
+  .user-icon, .posts-icon{
     width: 25px;
     height: 22px;
     margin-right: 10px;
+  }
+  .posts-icon, .my-posts-wrapper label{
+    vertical-align: middle;
+    display: inline-block;
   }
   .user-profile-data{
     height: 90%;

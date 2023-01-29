@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import '../Styles/home.css'
 import { useEffect } from 'react';
-import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
-import {auth, db, storage} from '../firebase-config';
+import { getDocs, collection, deleteDoc, doc} from 'firebase/firestore';
+import {auth, db} from '../firebase-config';
 import trashIcon from './SVGs/trash-solid.svg';
 import plusIcon from './SVGs/plus-icon.svg';
 import userIcon from './SVGs/user-solid.svg';
@@ -23,7 +23,6 @@ export default function Home({isAuth}) {
     }
     fetchPosts();
   },[])
-
   const deletePost = async (id)=>{
     const post = doc(db, 'posts', id);
     await deleteDoc(post);
@@ -56,10 +55,12 @@ export default function Home({isAuth}) {
 
               <div className="blog-wrapper">
                 <p>{post.blog}</p>
-              </div>    
+              </div> 
+              
             </div>
           )
         })}
+       
         {isAuth && <Link className='create-post-mobile' to="/blog-website/createPost"><img src={plusIcon} alt="text"/></Link>}
     </div>
   )

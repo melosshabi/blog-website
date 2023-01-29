@@ -42,6 +42,7 @@ export default function CreatePost({isAuth}) {
           <div className="post-text-wrapper">
           <label>Blog:</label><textarea value={blog} max="500" onChange={e => setblog(e.target.value)}></textarea>
           </div>
+          {error && <label>{error}</label>}
           <div className="create-blog-wrapper">
             <Link to="/blog-website" className='return-to-home-btn'>Return to Home Page</Link>
             <button className='create-blog-btn' onClick={createBlog}>Create Blog</button>

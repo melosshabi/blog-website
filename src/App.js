@@ -10,6 +10,7 @@ import PageNotFound from './pages/PageNotFound'
 import { signOut } from 'firebase/auth';
 import { auth } from './firebase-config';
 import caret from './pages/SVGs/caret-down.svg';
+import UserPosts from './pages/UserPosts';
 
 function App() {
 
@@ -72,6 +73,7 @@ function App() {
         <Link onClick={toggleSidebar} to="/blog-website">Home</Link>
         {isAuth && <Link onClick={toggleSidebar} to="/blog-website/createPost">Create post</Link>}
         {isAuth && <Link onClick={toggleSidebar} to="/blog-website/userProfile">View Profile</Link>}
+        {isAuth && <Link onClick={toggleSidebar} to="/blog-website/userPosts">My Posts</Link>}
       </div>
       <div className="sidebar-sign-in-out">
       {!isAuth && <Link to="/blog-website/signUp" onClick={toggleSidebar}>Sign Up</Link>}
@@ -86,6 +88,7 @@ function App() {
       <Route path="/blog-website/signUp" element={<SignUp isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
       <Route path="/blog-website/createPost" element={<CreatePost isAuth={isAuth}/>}/>
       <Route path="/blog-website/userProfile" element={<UserProfile isAuth={isAuth} setIsAuth={setIsAuth}/>}/>
+      <Route path="/blog-website/userPosts" element={<UserPosts isAuth={isAuth}/>}/>
       <Route path="/*" element={<PageNotFound/>}/>
     </Routes>
     </Router>

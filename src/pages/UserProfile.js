@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../Styles/user-profile.css'
 import { updateEmail, updateProfile, sendPasswordResetEmail } from 'firebase/auth';
 import {auth, db, storage} from '../firebase-config'
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 import {collection, getDocs, updateDoc, doc} from 'firebase/firestore'
 import userIcon from './SVGs/user-solid.svg';
+import postsIcon from './SVGs/posts-icon.svg';
 
 export default function UserProfile({isAuth, setIsAuth}) {
 
@@ -100,7 +102,8 @@ export default function UserProfile({isAuth, setIsAuth}) {
       </div>
       <div className="user-profile-sidebar">
         <h1 className='my-profile-h2'>My Profile</h1>
-        <div className="user-icon-wrapper"><img className="user-icon" src={userIcon} alt="" /><label>Profile</label></div>
+        <div className="user-icon-wrapper"><img className="user-icon" src={userIcon} alt="user icon" /><label>Profile</label></div>
+        <div className="my-posts-wrapper"><Link to="/blog-website/userPosts"><img className="posts-icon" src={postsIcon} alt="posts-icon"/><label>My Posts</label></Link></div>
         </div>
 
       <div className="user-profile-data">

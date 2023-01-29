@@ -161,6 +161,9 @@
   .blog-wrapper{
     font-size: 1em;
   }
+  .blog-wrapper p{
+    overflow-wrap: break-word;
+}
   .create-post-mobile{
     display: block;
     position: fixed;

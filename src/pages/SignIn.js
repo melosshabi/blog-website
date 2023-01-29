@@ -44,7 +44,6 @@ export default function SignIn({isAuth, setIsAuth}) {
       navigate('/blog-website')
     })
   }
-  console.log(window.screen.height)
   return (
     <div className="signInPage-div">
     <div className="gradient-div"></div>
