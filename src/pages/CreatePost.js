@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import '../Styles/create-post.css'
 import {auth, db, storage} from '../firebase-config'
-import { addDoc, collection } from 'firebase/firestore'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { Link, useNavigate } from 'react-router-dom';
 import { getDownloadURL, ref } from 'firebase/storage';
 
@@ -21,7 +21,7 @@ export default function CreatePost({isAuth}) {
     await getDownloadURL(profilePictureRef).then(url => {
       profilePicture = url;
   }).catch(err => console.log(err))
-    await addDoc(collectionRef, {title:title, blog:blog, authorDetails:{authorName:auth.currentUser.displayName, authorEmail:auth.currentUser.email, authorProfilePicture :profilePicture,id:auth.currentUser.uid}})
+    await addDoc(collectionRef, {title:title, blog:blog, createdAt:serverTimestamp(), authorDetails:{authorName:auth.currentUser.displayName, authorEmail:auth.currentUser.email, authorProfilePicture :profilePicture,id:auth.currentUser.uid}})
     .then(()=> navigate('/blog-website'))
     
   }else{

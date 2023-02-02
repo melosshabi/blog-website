@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import '../Styles/home.css'
 import { useEffect } from 'react';
-import { getDocs, collection, deleteDoc, doc} from 'firebase/firestore';
+import { getDocs, collection, deleteDoc, doc, query, where, orderBy} from 'firebase/firestore';
 import {auth, db} from '../firebase-config';
 import trashIcon from './SVGs/trash-solid.svg';
 import plusIcon from './SVGs/plus-icon.svg';
@@ -16,8 +16,9 @@ export default function Home({isAuth}) {
   useEffect(()=>{
     const fetchPosts = async () =>{
       const collectionRef = collection(db, 'posts')
-      const data = await getDocs(collectionRef);
-      setPostsList(data.docs.map(doc=> ({...doc.data(), id:doc.id})))
+      const queryPosts = query(collectionRef, orderBy('createdAt'))
+      const fetchedQueryPosts = await getDocs(queryPosts)
+      setPostsList(fetchedQueryPosts.docs.map(doc=> ({...doc.data(), id:doc.id})))
       let loader = document.getElementsByClassName('loader-wrapper')[0];
       loader.style.display = "none";
     }
