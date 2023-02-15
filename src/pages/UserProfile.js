@@ -90,7 +90,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
   //This function lets the user to reset their password through an Email link
   async function resetPassword(){
     const email = auth.currentUser.email;
-    await sendPasswordResetEmail(auth, email).then(res => console.log(res));
+    await sendPasswordResetEmail(auth, email);
     alert("A password reset email has been sent to you.")
     setIsAuth(false);
     localStorage.clear();
