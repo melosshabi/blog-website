@@ -92,8 +92,12 @@ export default function UserProfile({isAuth, setIsAuth}) {
   async function resetPassword(){
     const email = auth.currentUser.email;
     await sendPasswordResetEmail(auth, email);
+<<<<<<< HEAD
     await signOut(auth)
     alert("A password reset email has been sent to you.");
+=======
+    alert("A password reset email has been sent to you.")
+>>>>>>> 1e88e3245446f174d616388d2b9887c68bd6d6e6
     setIsAuth(false);
     localStorage.clear();
   }
