@@ -13,7 +13,7 @@ export default function PageNotFound() {
         <br/>
         <h2>Error 404 Page not found</h2>
         <br/>
-        <h3>Return to the <a href='/blog-website'>Home Page</a></h3>
+        <h3>Return to the <a href='/'>Home Page</a></h3>
     </div>
   )
 }

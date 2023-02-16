@@ -22,7 +22,7 @@ export default function CreatePost({isAuth}) {
       profilePicture = url;
   }).catch(err => console.log(err))
     await addDoc(collectionRef, {title:title, blog:blog, createdAt:serverTimestamp(), authorDetails:{authorName:auth.currentUser.displayName, authorEmail:auth.currentUser.email, authorProfilePicture :profilePicture,id:auth.currentUser.uid}})
-    .then(()=> navigate('/blog-website'))
+    .then(()=> navigate('/'))
     
   }else{
     setError('Please enter a title and a blog')
@@ -44,7 +44,7 @@ export default function CreatePost({isAuth}) {
           </div>
           {error && <label>{error}</label>}
           <div className="create-blog-wrapper">
-            <Link to="/blog-website" className='return-to-home-btn'>Return to Home Page</Link>
+            <Link to="/" className='return-to-home-btn'>Return to Home Page</Link>
             <button className='create-blog-btn' onClick={createBlog}>Create Blog</button>
           </div>
         </div>

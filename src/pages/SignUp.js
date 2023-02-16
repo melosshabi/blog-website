@@ -9,7 +9,7 @@ export default function SignUp({isAuth, setIsAuth}) {
 
   useEffect(()=>{
     if(isAuth){
-      navigate('/blog-website')
+      navigate('/')
     }
   },[])
 
@@ -35,7 +35,7 @@ export default function SignUp({isAuth, setIsAuth}) {
          await updateProfile(auth.currentUser, {displayName:registerName})
    
         setIsAuth(true)
-        navigate('/blog-website')
+        navigate('/')
        }catch(err){
          if(err.message === "Firebase: Error (auth/invalid-email)."){
            setError('Invalid Email!')
@@ -55,7 +55,7 @@ export default function SignUp({isAuth, setIsAuth}) {
       localStorage.setItem('email', res.user.email)
       localStorage.setItem('isAuth', true)
       setIsAuth(true)
-      navigate('/blog-website')
+      navigate('/')
     })
   }
   return (

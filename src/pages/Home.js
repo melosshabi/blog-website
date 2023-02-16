@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import '../Styles/home.css'
 import { useEffect } from 'react';
-import { getDocs, collection, deleteDoc, doc, query, where, orderBy} from 'firebase/firestore';
+import { getDocs, collection, deleteDoc, doc, query, orderBy} from 'firebase/firestore';
 import {auth, db} from '../firebase-config';
 import trashIcon from './SVGs/trash-solid.svg';
 import plusIcon from './SVGs/plus-icon.svg';
@@ -62,7 +62,7 @@ export default function Home({isAuth}) {
           )
         })}
        
-        {isAuth && <Link className='create-post-mobile' to="/blog-website/createPost"><img src={plusIcon} alt="text"/></Link>}
+        {isAuth && <Link className='create-post-mobile' to="/createPost"><img src={plusIcon} alt="text"/></Link>}
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 import '../Styles/sign-in.css'
-import {signInWithEmailAndPassword, signInWithPopup, signInWithRedirect} from 'firebase/auth'
+import {signInWithEmailAndPassword, signInWithPopup} from 'firebase/auth'
 import {auth, provider} from '../firebase-config'
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +9,7 @@ export default function SignIn({isAuth, setIsAuth}) {
    let navigate = useNavigate();
   useEffect(()=>{
     if(isAuth){
-      navigate('/blog-website')
+      navigate('/')
     }
   })
   const [signInEmail, setSignInEmail] =  useState('');
@@ -22,7 +23,7 @@ export default function SignIn({isAuth, setIsAuth}) {
         localStorage.setItem('name', res.user.displayName)
         localStorage.setItem('email', res.user.email);
         localStorage.setItem('isAuth', true); 
-        navigate('/blog-website')
+        navigate('/')
         setIsAuth(true);
       });
     }catch(err){
@@ -41,7 +42,7 @@ export default function SignIn({isAuth, setIsAuth}) {
       localStorage.setItem('email', res.user.email)
       localStorage.setItem('isAuth', true)
       setIsAuth(true)
-      navigate('/blog-website')
+      navigate('/')
     })
   }
   return (
@@ -59,7 +60,7 @@ export default function SignIn({isAuth, setIsAuth}) {
         {error && <p>{error}</p>}
         <button className='sign-in-btn' onClick={logIn}>Sign In</button>
       </div>
-      <p className='dont-have-acc'>Don't have an account? <a href="/signUp">Sign Up</a></p>
+      <p className='dont-have-acc'>Don't have an account? <Link to="/signUp">Sign Up</Link></p>
       <div className="border-div"></div>
       <div className="google-btn" onClick={logInWithGoogle}>
         <div className="google-icon-wrapper">
