@@ -94,6 +94,7 @@
     cursor: pointer;
   }
   .google-icon{
+    width: 30px;
     position: inline-block;
     vertical-align: middle;
     margin-right: -60px;
