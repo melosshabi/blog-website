@@ -203,7 +203,7 @@
     cursor: not-allowed;
   }
  
-  .edit-btn{
+  /* .edit-btn{
     position: absolute;
     bottom:0;
     right: 0;
@@ -214,7 +214,7 @@
   }
   .edit-btn:hover{
     text-decoration: underline;
-  }
+  } */
   .save-btn{
     position: absolute;
     left: 0;

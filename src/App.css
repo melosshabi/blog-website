@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+:root{
+  --darkGray:rgb(29, 34, 38);
+  --dimWhite:rgba(255, 255, 255, .2)
+}
 html{
   overflow-x: hidden;
 }
@@ -11,12 +15,14 @@ html{
   font-family: 'Open Sans', sans-serif;
 }
 body{
-  background-color: #f6faff;
+  background-color: rgb(39, 38, 38);
+  color:white;
 }
 .navbar{
   height: 6vh;
   width: 100vw;
-  background-color: white;
+  background-color: rgb(39, 38, 38);
+  color:white;
   display: flex;
   justify-content: space-between;
   font-family: 'Open Sans', sans-serif;
@@ -37,8 +43,8 @@ body{
 }
 .navbar-sign-in-out a{
   text-decoration: none;
-  color:black;
-  border:1px solid rgba(0, 0, 0, .5);
+  color:white;
+  border:1px solid white;
   padding:5px 25px;
   font-weight: 550;
   transition: all 200ms;
@@ -59,6 +65,7 @@ body{
   background: none;
   border:none;
   font-size: 1.1em;
+  color:white;
 }
 .caret{
   width: 10px;
@@ -95,7 +102,7 @@ body{
   margin-left: 2%;
 }
 .navbar-btns a{
-  color:black;
+  color:white;
   text-decoration: none;
 }
 .hamburger-menu{

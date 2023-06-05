@@ -30,7 +30,7 @@ export default function UserPosts({isAuth}) {
         <h1>My Posts</h1>
         {userPosts.map(post =>{
             return(
-                <div key={nanoid()} className="post">
+                <div key={nanoid()} className="post userPost">
                 {/* Wrapper of user profile picture, name and the delete button */}
                 <div className="author-details-wrapper">
                 <div className="author-name-profile-pic-wrapper">
