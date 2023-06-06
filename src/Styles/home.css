@@ -134,6 +134,9 @@
   .blog-content{
     padding:10px;
   }
+  .home-post-picture{
+    max-width: 100%;
+  }
   .blog-content:focus{
     outline:1px solid white;
   }

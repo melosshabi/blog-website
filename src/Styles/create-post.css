@@ -12,9 +12,9 @@
  font-family: 'Open sans', sans-serif;
 }
 .post-wrapper{
-  width: 50%;
-  height: 45%;
-  background-color: white;
+  min-width: 50vw;
+  height: 75vh;
+  background-color: var(--darkGray);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -39,52 +39,67 @@
   margin-left: 5px;
 }
 .post-text-wrapper{
-  height: 50%;
+  height: 40%;
+  /* background-color: cyan; */
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
+  /* margin-bottom: 150px; */
 }
 .post-text-wrapper textarea{
-  height: 100%;
   width: 300px;
   min-width: 500px;
   max-width: 500px;
-  min-height: 100%;
-  max-height: 100%;
+  min-height: 80%;
+  max-height: 80%;
   margin-left: 5px;
+  padding:5px;
   font-family: sans-serif;
   font-size: .9em;
+}
+.image-icon{
+  width: 40px;
+  margin-left:10px;
+  margin-top: 5px;
+  cursor: pointer;
+  padding: 0 5px;
+  display: inline;
+  transition: all 250ms;
+}
+.image-icon:hover{
+  background-color: var(--dimWhite);
+}
+.post-image-input{
+  display: none;
+}
+.preview-post-img{
+  width: 90px;
+  height: 90px;
+  display: inline;
+  margin-left: 10px;
+  margin-top: 5px;
+  /* background-color: red; */
 }
 .create-blog-wrapper{
   width: 50%;
   display: flex;
   justify-content: space-around;
 }
-.create-blog-btn{
+.create-blog-btn, .return-to-home-btn{
   padding: 5px 10px;
   font-size: 1.2em;
   background:none;
-  border:1px solid black;
+  border:1px solid white;  
   cursor: pointer;
-  transition:all 200ms;
-}
-.create-blog-btn:hover{
-  background: black;
   color:white;
-}
-.return-to-home-btn{
-  padding: 5px 10px;
-  font-size: 1.2em;
-  color:black;
   text-decoration: none;
-  background:none;
-  border:1px solid black;
-  cursor: pointer;
   transition:all 200ms;
 }
-.return-to-home-btn:hover{
-  background: black;
+.create-blog-btn:hover, .return-to-home-btn:hover{
+  background: var(--dimWhite);
   color:white;
 }
+
 @media(max-width:1280px){
   .post-wrapper{
     width: 60%;
@@ -175,8 +190,8 @@
 }
 @media(max-height:1368px){
   .post-wrapper{
-    height: 65%;
-    width: 99%;
+    /* height: 65%;
+    width: 99%; */
   }
   .post-title-wrapper, .post-text-wrapper{
     font-size: 2em;

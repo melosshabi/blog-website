@@ -102,6 +102,7 @@ export default function Home({isAuth}) {
 
               <div className="blog-wrapper">
                 <p contentEditable="false" className='blog-content'>{post.blog}</p>
+                {post.picture && <img src={post.picture} className='home-post-picture'/>}
                 <button className='save-edit-post-btn' onClick={() => saveEdit(post.id, index)}>Save</button>
               </div> 
               

@@ -78,7 +78,6 @@ export default function UserProfile({isAuth, setIsAuth}) {
     const docsRef = collection(db, "posts");
     const queryPosts = query(docsRef, where("authorDetails.id", "==", auth.currentUser.uid))
     const docSnap = await getDocs(queryPosts)
-    console.log(docSnap)
     for(let i = 0; i < docSnap.docs.length; i++){
       const docRef = doc(db, 'posts', docSnap.docs[i].id);
       const profilePictureRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
