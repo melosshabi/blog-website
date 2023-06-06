@@ -155,7 +155,7 @@
     .blog-wrapper p{
         overflow-wrap: break-word;
     }
-    .create-post-mobile{
+    /* .create-post-mobile{
       display: block;
       position: fixed;
       left:10px;
@@ -169,7 +169,7 @@
     }
     .create-post-mobile img{
       width: 60px;
-    }
+    } */
     .edit-icon{
       right: -15px;
       bottom:-15px;

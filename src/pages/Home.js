@@ -109,7 +109,7 @@ export default function Home({isAuth}) {
           )
         })}
        
-        {isAuth && <Link className='create-post-mobile' to="/createPost"><img src={plusIcon} alt="text"/></Link>}
+        {isAuth && <Link className='create-post-mobile' to="/createPost"><img src={plusIcon} alt="plus icon"/></Link>}
     </div>
   )
 }

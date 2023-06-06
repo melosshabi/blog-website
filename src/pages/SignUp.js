@@ -67,7 +67,7 @@ export default function SignUp({isAuth, setIsAuth}) {
       <br/>
       <br/>
       <div className="sign-in-inputs">
-        <div className="input-fields">
+        <div className="input-fields sign-up-fields">
         <input type="text" placeholder='Name' value={registerName} onChange={e=>setRegisterName(e.target.value)} maxLength="25"/>
         <input type="text" placeholder='Email' value={registerEmail} onChange={e => setRegisterEmail(e.target.value)}/> 
         <input type="password" placeholder='Password' value={registerPassword} onChange={e => setRegisterPassword(e.target.value)}/> 

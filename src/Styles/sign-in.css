@@ -1,31 +1,37 @@
 .signInPage-div{
+  height: 94vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:5%;
+    margin-top:6vh;
   }
-  .gradient-div{
+  /* .gradient-div{
     width: 40%;
     height: 80vh;
     background: linear-gradient(65deg, #dcc2fd, #71b7fd, #adc2f6);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-  }
+  } */
   .sign-in-div{
     width: 40%;
     height: 80vh;
-    background-color: white;
+    /* background-color: white; */
+    box-shadow: 0 0 5px white;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: red; */
   }
   .sign-in-div h2{
+    font-size: 2em;
     margin-top:10%;
-    margin-left: 15%;
   }
   .sign-in-div p{
     margin-top: 1%;
-    margin-left: 15%;
   }
   .sign-in-inputs{
     height: 50%;
@@ -33,11 +39,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 15%;
   }
   .sign-in-inputs p{
     margin-top: 2%;
-    margin-left: 0%;
   }
   .input-fields{
     width: 100%;
@@ -66,7 +70,6 @@
   }
   .dont-have-acc{
     width: 55%;
-    margin-left: 15%;
     margin-bottom: 1%;
     display: flex;
     justify-content: center;
@@ -78,72 +81,81 @@
   .border-div{
     height: 1px;
     width: 55%;
-    margin-left:15%;
     margin-bottom: 5%;
-    background-color: black;
+    background-color: white;
   }
   .google-btn{
     width: 40%;
-    margin-left:19%;
     padding:12px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border:1px solid rgba(0, 0, 0, .5);
+    border:1px solid white;
     border-radius: 8px;
     cursor: pointer;
+    transition: all 250ms;
+  }
+  .google-btn:hover{
+    background-color: rgba(255, 255, 255, .2);
   }
   .google-icon{
     width: 30px;
     position: inline-block;
     vertical-align: middle;
-    margin-right: -60px;
+    margin-right: 10px;
   }
   .btn-text{
     position:inline-block;
     vertical-align: middle;
   }
 
-@media(max-width:1024px){
+@media(max-width:1280px) and (max-height:1024px){
     .signInPage-div{
-        height: 100vh;
+        height: 92vh;
         width: 100vw;
-        margin-top: 0;
+        margin-top: 8vh;
+        /* background-color: cyan; */
       }
       .sign-in-div{
-        height: 95%;
-        width: 95%;
+        height: 85%;
+        width: 55%;
         margin-top: 0;
         border-radius: 8px;
         box-shadow: 2px 2px 5px black;
+        align-items: center;
+        justify-content: space-around;
       }
       .sign-in-div h2{
         margin-top:5%;
       }
       .input-fields{
-        margin-top: -3%;
-        height: 50%;
+        height: 40%;
       }
       .sign-in-btn{
-        margin-top: 5%;
+        margin-top: 10%;
         margin-bottom: 0;
       }
       .border-div{
-        margin-top:-5%;
+        margin-top:0;
         margin-bottom:5%;
+      }
+      .google-btn{
+        margin-bottom: 2%;
       }
       .gradient-div{
         display: none;
       }
 }
-@media(max-width:912px){
+/* Surface Pro 7 */
+@media screen and (max-width:912px) and (max-height:1368px) {
     .signInPage-div{
-        height: 50vh;
-        margin-top: 20%;
+        height: 92vh;
+        margin-top: 8vh;
       }
       .sign-in-div{
-        height: 60vh;
-        margin-top: 0;
+        height: 75%;
+        width: 80%;
+        justify-content: space-around;
       }
       .sign-in-div h2{
         font-size: 2.5em;
@@ -159,13 +171,17 @@
         margin-top: 10%;
       }
       .border-div{
-        margin-top:-5%;
+        margin-top:0;
+      }
+      .google-btn{
+        margin-bottom: 5%;
       }
 }
-@media(max-width:540px){
+/* Surface Duo */
+@media screen and (max-width:540px) and (max-height:720px){
     .signInPage-div{
-        height: 100vh;
-        margin-top: 0;
+        height: 93vh;
+        margin-top: 7vh;
       }
       .sign-in-div{
         height: 95%;
@@ -179,10 +195,12 @@
       }
       .input-fields{
         width: 70vw;
-        margin-left: 25%;
       }
       .input-fields input{
         font-size: 1.1em;
+      }
+      .sign-in-inputs{
+        width: 100%;
       }
       .sign-in-btn{
         width: 65vw;
@@ -190,51 +208,65 @@
         margin-bottom: -10%;
       }
       .border-div{
-        margin-left: 11%;
         margin-top: 2%;
         width: 75vw;
       }
       .google-btn{
         width: 45vw;
       }
-      .dont-have-acc{
-        padding-left: 10%;
-      }
 }
-@media(max-width:414px){
+/* iPhone 14 Pro Max */
+@media screen and (max-width:430px) and (max-height:932px) {
     .signInPage-div{
-        margin-top: 20%;
-        height: 80vh;
+        height: 93vh;
         width: 100vw;
+        margin-top: 7vh;
       }
       .sign-in-div{
+        height: 80%;
         width: 99%;
+        justify-content: space-around;
       }
-      .sign-in-div h2, .sign-in-div p{
-        margin-left: 4%;
-        margin-bottom: 3%;
+      .sign-in-div p{
+        font-size: 1em;
+      }
+      .sign-in-inputs{
+        width: 100%;
+        margin-top: 0;
       }
       .sign-in-inputs p{
         margin-top:-6%;
-        margin-left: 15%;
       }
       .input-fields{
         width: 90vw;
         height: 45%;
         margin-bottom: 10%;
       }
+      .sign-up-fields{
+        height: 55%;
+        margin-top: -10%;
+      }
+      .sign-in-btn{
+        width: 80%;
+        font-size: 1.5em;
+      }
       .dont-have-acc{
         width: 60%;
-        padding-left: 14%;
+      }
+      .border-div{
+        display: none;
       }
       .google-btn{
        display: none;
       }
 }
-@media(max-width:360px){
+/* S21FE */
+@media screen and (max-width:360px) and (max-height:800px){
     .sign-in-div{
         height: 80vh;
-        margin-top: -10%;
+    }
+    .sign-in-div p {
+      font-size: .9em;
     }
     .dont-have-acc{
         width: 90%;

@@ -47,7 +47,7 @@ export default function SignIn({isAuth, setIsAuth}) {
   }
   return (
     <div className="signInPage-div">
-    <div className="gradient-div"></div>
+    {/* <div className="gradient-div"></div> */}
     <div className='sign-in-div'>
       <h2>Welcome Back!</h2>
       <p>Enter the information you entered while registering.</p>
@@ -57,7 +57,7 @@ export default function SignIn({isAuth, setIsAuth}) {
         <input type="text" placeholder='Email' value={signInEmail} onChange={e => setSignInEmail(e.target.value)}/> 
         <input type="password" placeholder='Password' value={signInPassword} onChange={e => setSignInPassword(e.target.value)}/> 
         </div>
-        {error && <p>{error}</p>}
+        {error && <p style={{color:'red'}}>{error}</p>}
         <button className='sign-in-btn' onClick={logIn}>Sign In</button>
       </div>
       <p className='dont-have-acc'>Don't have an account? <Link to="/signUp">Sign Up</Link></p>

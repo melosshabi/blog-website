@@ -30,8 +30,8 @@ function App() {
   }})
     
   function toggleSidebar(){
-    let sidebar = document.getElementsByClassName('sidebar')[0];
-    sidebar.classList.toggle('active');
+    document.getElementsByClassName('sidebar')[0].classList.toggle('active');
+    document.querySelector('html').classList.toggle('disableScroll')
   }
   function expandViewProifleDiv(){
     let viewProfileDiv = document.getElementsByClassName('view-profile-div')[0];
@@ -49,7 +49,7 @@ function App() {
         <Link to="/">Home</Link>
         {isAuth && <Link to="/createPost" isAuth={isAuth}>Create Post</Link>}
       </div>
-      <div className="navbar-sign-in-out">
+      <div className={!isAuth ? 'navbar-sign-in-out' : 'navbar-sign-in-out username-wrapper'}>
       {!isAuth && <Link to="/signUp">Sign Up</Link>}
       {!isAuth && <Link to="/signIn">Sign in</Link>}
       {isAuth && <div className='username-profilebtn-wrapper'>
@@ -70,7 +70,7 @@ function App() {
     </nav>
     <div className="sidebar">
       <div className="sidebar-btns">
-        <Link onClick={toggleSidebar} to="/blog-website">Home</Link>
+        <Link onClick={toggleSidebar} to="/">Home</Link>
         {isAuth && <Link onClick={toggleSidebar} to="/createPost">Create post</Link>}
         {isAuth && <Link onClick={toggleSidebar} to="/userProfile">View Profile</Link>}
         {isAuth && <Link onClick={toggleSidebar} to="/userPosts">My Posts</Link>}
