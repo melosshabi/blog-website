@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import '../Styles/home.css'
 import { useEffect } from 'react';
@@ -9,6 +9,7 @@ import editIcon from './SVGs/edit.svg'
 import plusIcon from './SVGs/plus-icon.svg';
 import userIcon from './SVGs/user-solid.svg';
 import {nanoid} from 'nanoid'
+import { toggleMoreOptions, editPost, saveEdit } from './functions/functions';
 
 export default function Home({isAuth}) {
 
@@ -26,10 +27,6 @@ export default function Home({isAuth}) {
     fetchPosts();
   },[])
 
-  const toggleMoreOptions = (index) => {
-    document.querySelectorAll('.post')[index].querySelector('.more-options').classList.toggle("active-more-options")
-  }
-
   const deletePost = async (id) => {
     const post = doc(db, 'posts', id);
     await deleteDoc(post)
@@ -37,34 +34,6 @@ export default function Home({isAuth}) {
     .catch(err => console.log)
     
   }
-
-  // This variable will be used to store the content of the blog before it was edited
-  const beforeEditText = useRef()
-
-  const editPost = (index) => {
-    const blogToEdit = document.querySelectorAll('.post')[index].querySelector('.blog-content')
-    document.querySelectorAll('.post')[index].querySelector('.more-options').classList.remove('active-more-options')
-    document.querySelectorAll('.post')[index].querySelector('.save-edit-post-btn').classList.toggle('active-save-edit-post-btn')
-    blogToEdit.contentEditable = true
-    blogToEdit.focus()
-    beforeEditText.current = blogToEdit.innerText
-  }
-
-  const saveEdit = async (postId, index) => {
-    const saveBtn = document.querySelectorAll('.post')[index].querySelector('.save-edit-post-btn')
-    const blogContent = document.querySelectorAll('.post')[index].querySelector('.blog-content')
-    blogContent.contentEditable = false
-    saveBtn.classList.remove('active-save-edit-post-btn')
-
-    if(blogContent.innerText === beforeEditText.current){
-      return
-    }
-    const postRef = doc(db, 'posts', postId)
-    await updateDoc(postRef, {
-      blog:blogContent.innerText
-    })
-  }
-
   return (
     <div className="home-page-container">
        <div className="loader-wrapper">

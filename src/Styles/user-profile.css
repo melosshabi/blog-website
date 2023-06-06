@@ -76,7 +76,7 @@
     margin:auto;
     margin-top: 8vh;
     box-shadow: 2px 2px 5px black;
-    background-color: white;
+    background-color: var(--darkGray);
     display: flex;
     align-items: center;
     font-family: "Open Sans", sans-serif;
@@ -99,16 +99,16 @@
     padding: 15px 0;
     cursor: pointer;
     transition: all 200ms;
-    border-top:1px solid black;
-    border-bottom: 1px solid black;
+    border-top:1px solid white;
+    border-bottom: 1px solid white;
     margin-top: 5%;
   }
   .user-icon-wrapper:hover, .my-posts-wrapper:hover{
-    background-color: #ebebeb;
+    background-color: var(--dimWhite);
   }
   .my-posts-wrapper a{
     text-decoration: none;
-    color:black;
+    color:white;
   }
   .user-icon-wrapper label, .my-posts-wrapper label{
     cursor: pointer;
@@ -130,7 +130,7 @@
   .user-profile-data h1{
     text-align: center;
     padding: 2% 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
   }
   .user-info{
     height: 50%;
@@ -146,7 +146,7 @@
   .user-info input:not(.profile-picture-input){
     font-size: 1.2em;
     padding:10px 15px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 3px;
     box-shadow: 1px 1px 2px black;
   }
@@ -161,14 +161,14 @@
     font-size: 1.5em;
     padding:5px 10px;
     background: none;
-    border:1px solid black;
+    border:1px solid white;
     border-radius: 3px;
     cursor: pointer;
+    color:white;
     transition: all 200ms;
   }
   .profile-picture-input::-webkit-file-upload-button:hover{
-    background-color: black;
-    color:white;
+    background-color: var(--dimWhite);
   }
   .profile-picture{
     width: 80px;
@@ -178,32 +178,29 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: red; */
-  
   }
   .uploadBtn{
     font-size: 1.2em;
     padding:5px 10px;
     background: none;
-    border:1px solid black;
+    border:1px solid white;
     border-radius: 3px;
     cursor: pointer;
+    color:white;
     transition: all 200ms;
   }
   .uploadBtn:hover{
-    background-color: black;
-    color:white;
+    background-color: var(--dimWhite);
   }
   .uploadBtndisabled{
     font-size: 1.2em;
     padding:5px 10px;
     background: none;
-    border:1px solid black;
+    border:1px solid white;
     border-radius: 3px;
     cursor: not-allowed;
   }
- 
-  /* .edit-btn{
+  .edit-info-btn{
     position: absolute;
     bottom:0;
     right: 0;
@@ -214,8 +211,8 @@
   }
   .edit-btn:hover{
     text-decoration: underline;
-  } */
-  .save-btn{
+  }
+  .save-info-btn{
     position: absolute;
     left: 0;
     bottom:0;
@@ -225,7 +222,7 @@
     cursor: pointer;
     display: none;
   }
-  .save-btn:hover{
+  .save-info-btn:hover{
     text-decoration: underline;
   }
 

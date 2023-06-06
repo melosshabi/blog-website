@@ -102,7 +102,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
       </div>
       <div className="user-profile-sidebar">
         <h1 className='my-profile-h2'>My Profile</h1>
-        <div className="user-icon-wrapper"><img className="user-icon" src={userIcon} alt="user icon" /><label>Profile</label></div>
+        {/* <div className="user-icon-wrapper"><img className="user-icon" src={userIcon} alt="user icon" /><label>Profile</label></div> */}
         <div className="my-posts-wrapper"><Link to="/userPosts"><img className="posts-icon" src={postsIcon} alt="posts-icon"/><label>My Posts</label></Link></div>
         </div>
 
@@ -111,18 +111,18 @@ export default function UserProfile({isAuth, setIsAuth}) {
           <div className="user-info">
             <div className="full-name-wrapper">
               <input className="input" type="text" value={fullName} onChange={e => setFullName(e.target.value)} disabled/>
-               <button className="edit-btn" onClick={e => editData(e.target)}>Edit Name</button>
-               <button className="save-btn" onClick={e => saveChanges(e.target)}>Save New Name</button>
+               <button className="edit-info-btn" onClick={e => editData(e.target)}>Edit Name</button>
+               <button className="save-info-btn" onClick={e => saveChanges(e.target)}>Save New Name</button>
             </div>
             <div className="email-wrapper">
               <input type="text" value={newEmail} onChange={e=> setNewEmail(e.target.value)} disabled/>
-              <button className="edit-btn" onClick={e => editData(e.target)} >Change Email</button>
-              <button className="save-btn" onClick={e => saveChanges(e.target)}>Save New Email</button>
+              <button className="edit-info-btn" onClick={e => editData(e.target)} >Change Email</button>
+              <button className="save-info-btn" onClick={e => saveChanges(e.target)}>Save New Email</button>
               </div>
             <div className="password-wrapper">
               <input type="password" value={newPassword} onChange={e => setNewPassword(e.target.value)} disabled/>
-              <button className="edit-btn" onClick={e => resetPassword()}>Reset Password</button>
-              <button className="save-btn" onClick={e => saveChanges(e.target)}>Save New Password</button>
+              <button className="edit-info-btn" onClick={e => resetPassword()}>Reset Password</button>
+              <button className="save-info-btn" onClick={e => saveChanges(e.target)}>Save New Password</button>
             </div>
             </div>
             <div className="profile-picture-wrapper">

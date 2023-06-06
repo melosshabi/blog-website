@@ -110,6 +110,9 @@
   .delete-btn{
     border-bottom:1px solid white;
   }
+  .edit-btn:hover{
+    text-decoration: none;
+  }
   .trash-icon, .edit-icon{
     height: 20px;
     cursor: pointer;
@@ -171,7 +174,7 @@
     width: 20%;
   }
   .post{
-    width: 50vw;
+    width: 70vw;
   }
   .author-details-wrapper{
     height: 6vh;
