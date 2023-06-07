@@ -143,6 +143,9 @@
   .blog-content:focus{
     outline:1px solid white;
   }
+  .home-post-video{
+    max-width: 90%;
+  }
   .post-date{
     position:absolute;
     bottom:5px;
@@ -266,12 +269,20 @@
   .post-pfp{
     height: 25px;
   }
+  .title-wrapper{
+    text-align: center;
+  }
   .blog-wrapper{
     font-size: 1em;
+    margin-bottom: 50px;
   }
   .blog-wrapper p{
     overflow-wrap: break-word;
 }
+  .home-post-video{
+    max-width: 90%;
+    margin-bottom: 50px;
+  }
   .create-post-mobile{
     display: block;
     position: fixed;

@@ -104,7 +104,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
         <h1 className='my-profile-h2'>My Profile</h1>
         {/* <div className="user-icon-wrapper"><img className="user-icon" src={userIcon} alt="user icon" /><label>Profile</label></div> */}
         <div className="my-posts-wrapper"><Link to="/userPosts"><img className="posts-icon" src={postsIcon} alt="posts-icon"/><label>My Posts</label></Link></div>
-        </div>
+      </div>
 
       <div className="user-profile-data">
         <h1>Personal Information</h1>

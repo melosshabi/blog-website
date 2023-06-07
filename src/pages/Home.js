@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 // Functions
-import { getDocs, collection, deleteDoc, doc, query, orderBy, updateDoc} from 'firebase/firestore';
-import {auth, db} from '../firebase-config';
+import { getDocs, collection, deleteDoc, doc, query, orderBy} from 'firebase/firestore';
+import {deleteObject, ref} from 'firebase/storage'
+import {auth, db, storage} from '../firebase-config';
 import {nanoid} from 'nanoid'
 import { toggleMoreOptions, editPost, saveEdit, parseDate } from './functions/functions';
 // Images
@@ -29,8 +30,18 @@ export default function Home({isAuth}) {
     fetchPosts();
   },[])
 
-  const deletePost = async (id) => {
-    const post = doc(db, 'posts', id);
+  const deletePost = async (id, pictureName, videoName) => {
+    let picRef;
+    let videoRef;
+    if(pictureName){
+      picRef = ref(storage, pictureName)
+      await deleteObject(picRef)
+    } 
+    if(videoName){
+      videoRef = ref(storage, videoName)
+      await deleteObject(videoRef)
+    } 
+    const post = doc(db, 'posts', id)
     await deleteDoc(post)
     .then(() => window.location.reload())
   }
@@ -58,7 +69,7 @@ export default function Home({isAuth}) {
                 <button className='more-options-btn' onClick={() => toggleMoreOptions(index)}><p>···</p></button>
                 <div className="more-options">
                   <ul className='more-options-ul'>
-                    <li><button className='more-options-btns delete-btn' onClick={() => deletePost(post.id)}><img className="trash-icon" src={trashIcon}  alt="Trash Icon"/>Delete</button></li>
+                    <li><button className='more-options-btns delete-btn' onClick={() => deletePost(post.id, post.pictureName, post.videoName)}><img className="trash-icon" src={trashIcon}  alt="Trash Icon"/>Delete</button></li>
                     <li><button className='more-options-btns edit-btn' onClick={() => editPost(index)}><img className="edit-icon" src={editIcon}  alt="Trash Icon"/>Edit</button></li>
                   </ul>
                 </div>
@@ -73,6 +84,10 @@ export default function Home({isAuth}) {
               <div className="blog-wrapper">
                 <p contentEditable="false" className='blog-content'>{post.blog}</p>
                 {post.picture && <img src={post.picture} className='home-post-picture'/>}
+                {post.video && 
+                <video controls className='home-post-video'>
+                  <source src={post.video}/>
+                </video>}
                 <button className='save-edit-post-btn' onClick={() => saveEdit(post.id, index)}>Save</button>
               </div> 
               <p className='post-date'>{date.day} {date.month} {date.year} {date.hours}:{date.minutes}</p>

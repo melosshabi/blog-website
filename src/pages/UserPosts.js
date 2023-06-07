@@ -70,6 +70,11 @@ export default function UserPosts({isAuth}) {
               <div className="blog-wrapper">
                 <p contentEditable="false" className='blog-content'>{post.blog}</p>
                 {post.picture && <img src={post.picture} className='home-post-picture'/>}
+                {post.video &&
+                  <video controls className='userPost-video'>
+                    <source src={post.video}/>
+                  </video>
+                  }
                 <button className='save-edit-post-btn' onClick={() => saveEdit(post.id, index)}>Save</button>
               </div> 
               <p className="post-date userPost-date">{date.day} {date.month} {date.year} {date.hours}:{date.minutes}</p>

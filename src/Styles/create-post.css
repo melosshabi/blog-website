@@ -15,6 +15,7 @@
   min-width: 50vw;
   height: 75vh;
   background-color: var(--darkGray);
+  box-shadow: 0 0 5px white;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -61,6 +62,7 @@
   width: 40px;
   margin-left:10px;
   margin-top: 5px;
+  padding-top: 4px;
   cursor: pointer;
   padding: 0 5px;
   display: inline;
@@ -69,16 +71,18 @@
 .image-icon:hover{
   background-color: var(--dimWhite);
 }
+.video-icon{
+  margin-top:-15px;
+}
 .post-image-input{
   display: none;
 }
-.preview-post-img{
+.preview-post-img, .preview-post-video{
   width: 90px;
   height: 90px;
   display: inline;
   margin-left: 10px;
   margin-top: 5px;
-  /* background-color: red; */
 }
 .create-blog-wrapper{
   width: 50%;
@@ -97,9 +101,14 @@
 }
 .create-blog-btn:hover, .return-to-home-btn:hover{
   background: var(--dimWhite);
-  color:white;
 }
-
+.create-blog-btn[disabled], .disabled-return-to-home{
+  cursor: not-allowed;
+  opacity: .6;
+}
+.create-blog-btn[disabled]:hover, .disabled-return-to-home:hover{
+  background: none;
+}
 @media(max-width:1280px){
   .post-wrapper{
     width: 60%;
