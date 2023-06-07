@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/blog-website/static/css/main.def5a1f7.chunk.css",
+    "main.css": "/blog-website/static/css/main.50000012.chunk.css",
     "main.js": "/blog-website/static/js/main.39c55389.chunk.js",
     "main.js.map": "/blog-website/static/js/main.39c55389.chunk.js.map",
     "runtime-main.js": "/blog-website/static/js/runtime-main.224f5150.js",
@@ -8,7 +8,7 @@
     "static/js/2.ff1898d4.chunk.js": "/blog-website/static/js/2.ff1898d4.chunk.js",
     "static/js/2.ff1898d4.chunk.js.map": "/blog-website/static/js/2.ff1898d4.chunk.js.map",
     "index.html": "/blog-website/index.html",
-    "static/css/main.def5a1f7.chunk.css.map": "/blog-website/static/css/main.def5a1f7.chunk.css.map",
+    "static/css/main.50000012.chunk.css.map": "/blog-website/static/css/main.50000012.chunk.css.map",
     "static/js/2.ff1898d4.chunk.js.LICENSE.txt": "/blog-website/static/js/2.ff1898d4.chunk.js.LICENSE.txt",
     "static/media/caret-down.6a9f66c1.svg": "/blog-website/static/media/caret-down.6a9f66c1.svg",
     "static/media/edit.0c9ab544.svg": "/blog-website/static/media/edit.0c9ab544.svg",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.224f5150.js",
     "static/js/2.ff1898d4.chunk.js",
-    "static/css/main.def5a1f7.chunk.css",
+    "static/css/main.50000012.chunk.css",
     "static/js/main.39c55389.chunk.js"
   ]
 }
