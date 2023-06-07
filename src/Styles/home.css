@@ -143,6 +143,11 @@
   .blog-content:focus{
     outline:1px solid white;
   }
+  .post-date{
+    position:absolute;
+    bottom:5px;
+    right:5px;
+  }
   .create-post-mobile{
     display: none;
   }

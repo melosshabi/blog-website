@@ -110,7 +110,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
         <h1>Personal Information</h1>
           <div className="user-info">
             <div className="full-name-wrapper">
-              <input className="input" type="text" value={fullName} onChange={e => setFullName(e.target.value)} disabled/>
+              <input type="text" value={fullName} onChange={e => setFullName(e.target.value)} disabled/>
                <button className="edit-info-btn" onClick={e => editData(e.target)}>Edit Name</button>
                <button className="save-info-btn" onClick={e => saveChanges(e.target)}>Save New Name</button>
             </div>

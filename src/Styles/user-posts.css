@@ -23,6 +23,7 @@
   border: 1px solid rgba(0, 0, 0, .5);
   border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+  position:relative;
 }
 .userPost-author-details-wrapper{
   width: 100%;
@@ -144,6 +145,11 @@
 .blog-content:focus{
   outline:1px solid white;
 }
+.userPost-date{
+  position:absolute;
+  bottom:5px;
+  right:5px;
+}
 .create-post-mobile{
   display: none;
 }
@@ -167,25 +173,25 @@
 .active-save-edit-post-btn{
   display: block;
 }
- /* @media(max-width:1280px){
-    .post{
-      width: 50vw;
+ @media screen and (max-width:1280px) and (max-height:1024px){
+    .userPost{
+      width: 60vw;
     }
-    .author-details-wrapper{
+    .userPost-author-details-wrapper{
       height: 6vh;
     }
-    .author-name-profile-pic-wrapper{
+    .userPost-profile-pic-wrapper{
       height: 100%;
       width: 50%;
     }
-    .post-pfp{
+    .userPost-pfp{
       height: 40px;
     }
     .blog-wrapper{
       font-size: 1.6em;
     }
   }
-  @media(max-width:1024px){
+  @media screen and (max-width:1024px){
     .author-details-wrapper{
       height: 8vh;
     }
@@ -194,7 +200,8 @@
       justify-content: flex-start;
     }
   }
-  @media(max-width:912px){
+  /* Surface Pro 7 */
+  @media screen and (max-width:912px) and (max-height:1368px){
     .user-posts-container{
       width:100vw;
       margin:auto;
@@ -215,9 +222,14 @@
       width: 90%;
     }
   }
-  @media(max-width:540px){
-    body{
-      width: 100vw;
+  /* Surface Duo */
+  @media screen and (max-width:540px) and (max-height:720px){
+    .userPost{
+      width: 94vw;
+      min-height:30vh
+    }
+    .userPost-date{
+      font-size: .65em;
     }
     .user-posts-container{
       width: 100vw;
@@ -228,31 +240,37 @@
     }
     .blog-wrapper{
       font-size: .8em;
+      margin-bottom: 50px;
     }
     .title-wrapper{
       padding:3% 0;
     }
-    .edit-icon{
-      right: -20px;
-      bottom: -20px;
-    }
   }
-  @media(max-width:414px){
-    .post{
-      width: 95%;
-      margin-left:1px;
+  /* iPhone XR */
+  @media screen and (max-width:414px) and (max-height:896px){
+    .userPost{
+      min-width: 95vw;
+      max-width: 95vw;
     }
     .author-name-profile-pic-wrapper{
-      width: 50%;
+      font-size: .8em;
     }
-    .post-pfp{
-      height: 25px;
+    .userPost-pfp{
+      height: 35px;
+      margin-right: 5px;
+    }
+    .title-wrapper{
+      text-align: center;
     }
     .blog-wrapper{
       font-size: 1em;
+      margin-bottom: 80px;
     }
     .blog-wrapper p{
         overflow-wrap: break-word;
+    }
+    .userPost-date{
+      font-size: .75em;
     }
     .create-post-mobile{
       display: block;
@@ -265,17 +283,13 @@
       background: rgba(255, 255, 255, .5);
       border:none;
       border-radius: 50%;
+      left:20px;
     }
-    .create-post-mobile img{
-      width: 60px;
+    .more-options{
+      left:-10px;
+      transition: all 250ms;
     }
-    .edit-icon{
-      right: -15px;
-      bottom:-15px;
+    .active-more-options{
+      min-height:80px;
     }
   }
-  @media(max-width:280px){
-    .author-name-profile-pic-wrapper{
-      width: 50%;
-    }
-  }*/

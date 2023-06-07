@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
-import '../Styles/home.css'
-import { useEffect } from 'react';
+// Functions
 import { getDocs, collection, deleteDoc, doc, query, orderBy, updateDoc} from 'firebase/firestore';
 import {auth, db} from '../firebase-config';
+import {nanoid} from 'nanoid'
+import { toggleMoreOptions, editPost, saveEdit, parseDate } from './functions/functions';
+// Images
 import trashIcon from './SVGs/trash-solid.svg';
 import editIcon from './SVGs/edit.svg'
 import plusIcon from './SVGs/plus-icon.svg';
 import userIcon from './SVGs/user-solid.svg';
-import {nanoid} from 'nanoid'
-import { toggleMoreOptions, editPost, saveEdit } from './functions/functions';
+// CSS
+import '../Styles/home.css'
 
 export default function Home({isAuth}) {
 
@@ -31,9 +33,8 @@ export default function Home({isAuth}) {
     const post = doc(db, 'posts', id);
     await deleteDoc(post)
     .then(() => window.location.reload())
-    .catch(err => console.log)
-    
   }
+
   return (
     <div className="home-page-container">
        <div className="loader-wrapper">
@@ -41,6 +42,7 @@ export default function Home({isAuth}) {
       </div>
       <h1>Home Page</h1>
         {postsList && postsList.map((post, index) =>{
+          const date = parseDate(post.createdAt)
           return (
             <div key={nanoid()} className="post">
               {/* Wrapper of user profile picture, name and the delete button */}
@@ -61,7 +63,6 @@ export default function Home({isAuth}) {
                   </ul>
                 </div>
               </div>
-              // <div className="delete-btn-wrapper"><img className="delete-btn" src={trashIcon} onClick={() => deletePost(post.id)} alt="Trash Icon"/></div>
               }
               </div>
               {/* Wrapper of the post title */}
@@ -74,7 +75,7 @@ export default function Home({isAuth}) {
                 {post.picture && <img src={post.picture} className='home-post-picture'/>}
                 <button className='save-edit-post-btn' onClick={() => saveEdit(post.id, index)}>Save</button>
               </div> 
-              
+              <p className='post-date'>{date.day} {date.month} {date.year} {date.hours}:{date.minutes}</p>
             </div>
           )
         })}

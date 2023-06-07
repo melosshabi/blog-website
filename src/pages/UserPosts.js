@@ -1,14 +1,18 @@
-import { collection, getDocs, query, where, deleteDoc, doc } from 'firebase/firestore';
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
-import { auth, db } from '../firebase-config'
-import '../Styles/user-posts.css'
+// Functions
 import {nanoid} from 'nanoid';
-import { toggleMoreOptions, editPost, saveEdit } from './functions/functions';
+import { auth, db } from '../firebase-config'
+import { toggleMoreOptions, editPost, saveEdit, parseDate } from './functions/functions';
+import { collection, getDocs, query, where, orderBy, deleteDoc, doc } from 'firebase/firestore';
+// Images
 import userIcon from './SVGs/user-solid.svg'
 import trashIcon from './SVGs/trash-solid.svg'
 import plusIcon from './SVGs/plus-icon.svg'
 import editIcon from './SVGs/edit.svg'
+// CSS
+import '../Styles/user-posts.css'
+
 export default function UserPosts({isAuth}) {
     
   const [userPosts, setUserPosts] = useState([]);
@@ -16,12 +20,13 @@ export default function UserPosts({isAuth}) {
   //This function fetches all the posts created by the logged in user
   useEffect(() => {
     auth.onAuthStateChanged(()=>{
+      if(auth.currentUser !== null){
       (async function fetchUserPosts(){
           const collectionRef = collection(db, "posts");
-          const userPostsQuery = query(collectionRef, where("authorDetails.id", "==", auth.currentUser.uid))
+          const userPostsQuery = query(collectionRef, where("authorDetails.id", "==", auth.currentUser.uid), orderBy('createdAt'))
           const usersPosts = await getDocs(userPostsQuery);
           setUserPosts(usersPosts.docs.map(doc => ({...doc.data(), id:doc.id})))
-          })();
+          })();}
     })
   }, [])
  
@@ -34,11 +39,12 @@ export default function UserPosts({isAuth}) {
     <div className="user-posts-container">
         <h1>My Posts</h1>
         {userPosts.map((post, index) =>{
+            const date = parseDate(post.createdAt)
             return(
               <div key={nanoid()} className="post userPost">
               {/* Wrapper of user profile picture, name and the delete button */}
               <div className="author-details-wrapper userPost-author-details-wrapper">
-              <div className="author-name-profile-pic-wrapper user-post-profile-pic-wrapper">
+              <div className="author-name-profile-pic-wrapper userPost-profile-pic-wrapper">
                
               {post.authorDetails.authorProfilePicture && <img className="post-pfp userPost-pfp" src={post.authorDetails.authorProfilePicture} alt="text"/>}
               {!post.authorDetails.authorProfilePicture && <img className="post-pfp userPost-pfp" src={userIcon} alt="text"/>}
@@ -66,11 +72,11 @@ export default function UserPosts({isAuth}) {
                 {post.picture && <img src={post.picture} className='home-post-picture'/>}
                 <button className='save-edit-post-btn' onClick={() => saveEdit(post.id, index)}>Save</button>
               </div> 
-              
+              <p className="post-date userPost-date">{date.day} {date.month} {date.year} {date.hours}:{date.minutes}</p>
             </div>
             )
         })}
-        {isAuth && <Link className='create-post-mobile' to="/blog-website/createPost"><img src={plusIcon} alt="text"/></Link>}
+        {isAuth && <Link className='create-post-mobile' to="/createPost"><img src={plusIcon} alt="text"/></Link>}
     </div>
   )
 }
