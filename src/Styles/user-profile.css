@@ -1,5 +1,5 @@
 /*Loading Animation*/
-.loader-wrapper{
+/* .loader-wrapper{
   margin:0;
   padding:0;
   height: 100vh;
@@ -67,7 +67,7 @@
   100% {
     transform: translate(24px, 0);
   }
-}
+} */
 /*Page Style*/
 .user-profile-page{
     height: 90vh;

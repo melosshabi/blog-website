@@ -36,13 +36,13 @@ export default function CreatePost({isAuth}) {
     returnToHomeBtn.style.display = "none";
 
     const collectionRef = collection(db, 'posts');
-    const profilePictureRef = ref(storage, `Profile Pictures/ProfilePictureOf${auth.currentUser.uid}`)
-    let profilePicture = '';
+    // const profilePictureRef = ref(storage, `Profile Pictures/ProfilePictureOf${auth.currentUser.uid}`)
+    // let profilePicture = '';
     let postPicture = ''
     let postVideo = ''
     let pictureName = ''
     let videoName = ''
-    await getDownloadURL(profilePictureRef).then(url => profilePicture = url)
+    // await getDownloadURL(profilePictureRef).then(url => profilePicture = url)
      
     if(picture){
       pictureName = `PostPictures/${nanoid()}`
@@ -56,7 +56,7 @@ export default function CreatePost({isAuth}) {
       await uploadBytes(videoRef, video)
       await getDownloadURL(videoRef).then(url => postVideo = url)
     }
-    await addDoc(collectionRef, {title:title, blog:blog, picture:postPicture, pictureName, video:postVideo, videoName, createdAt:serverTimestamp(), lastUpdatedAt:serverTimestamp(), authorDetails:{authorName:auth.currentUser.displayName, authorEmail:auth.currentUser.email, authorProfilePicture: profilePicture, id:auth.currentUser.uid}})
+    await addDoc(collectionRef, {title:title, blog:blog, picture:postPicture, pictureName, video:postVideo, videoName, createdAt:serverTimestamp(), lastUpdatedAt:serverTimestamp(), authorDetails:{authorName:auth.currentUser.displayName, authorEmail:auth.currentUser.email, authorProfilePicture: auth.currentUser.photoURL, id:auth.currentUser.uid}})
     .then(()=> navigate('/'))    
   }else{
     setError('Please enter a title and a blog')

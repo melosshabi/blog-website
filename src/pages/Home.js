@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 // Functions
 import { getDocs, collection, deleteDoc, doc, query, orderBy} from 'firebase/firestore';
-import {deleteObject, ref} from 'firebase/storage'
+import {deleteObject, getDownloadURL, ref, uploadBytes} from 'firebase/storage'
 import {auth, db, storage} from '../firebase-config';
 import {nanoid} from 'nanoid'
 import { toggleMoreOptions, editPost, saveEdit, parseDate } from './functions/functions';

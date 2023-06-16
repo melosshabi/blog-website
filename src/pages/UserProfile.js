@@ -25,21 +25,22 @@ export default function UserProfile({isAuth, setIsAuth}) {
   const [currentProfilePicture, setCurrentProfilePicture] = useState('');
 
   //Fetches the User Profile Picture after Auth State Changes
-  auth.onAuthStateChanged(()=>{
-    (async function fetchProfilePicture(){
-      const profilePictureRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
-      await getDownloadURL(profilePictureRef).then(url => {
-        setCurrentProfilePicture(url)
-        const loader = document.getElementsByClassName("loader-wrapper")[0]
-        loader.style.display = "none";
-      }).catch(() => {
-        const loader = document.getElementsByClassName("loader-wrapper")[0]
-        loader.style.display = "none"
-        setCurrentProfilePicture(userIcon)
-      })
-  })();
-  })
+  // auth.onAuthStateChanged(()=>{
+  //   (async function fetchProfilePicture(){
+  //     const profilePictureRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
+  //     await getDownloadURL(profilePictureRef).then(url => {
+  //       setCurrentProfilePicture(url)
+  //       const loader = document.getElementsByClassName("loader-wrapper")[0]
+  //       loader.style.display = "none";
+  //     }).catch(() => {
+  //       const loader = document.getElementsByClassName("loader-wrapper")[0]
+  //       loader.style.display = "none"
+  //       setCurrentProfilePicture(userIcon)
+  //     })
+  // })();
+  // })
   
+  auth.onAuthStateChanged(() => setCurrentProfilePicture(auth.currentUser.photoURL))
     //Function to Let users edit their data
    function editData(button){
     button.parentNode.childNodes[0].disabled = false;
@@ -54,8 +55,13 @@ export default function UserProfile({isAuth, setIsAuth}) {
   }
   //This function uploads the selected picture to the database
   async function uploadProfilePicture(file) {
+    let uploadButton = document.getElementsByClassName('uploadBtndisabled')[0]
+    uploadButton.disabled = true
+    uploadButton.innerText = "Uploading..."
     let storageRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
     await uploadBytes(storageRef, file)
+    const pictureUrl = await getDownloadURL(storageRef)
+    await updateProfile(auth.currentUser, {photoURL:pictureUrl})
     await updateDocs()
   }
     //This function sends the updated data to the database
@@ -80,8 +86,8 @@ export default function UserProfile({isAuth, setIsAuth}) {
     const docSnap = await getDocs(queryPosts)
     for(let i = 0; i < docSnap.docs.length; i++){
       const docRef = doc(db, 'posts', docSnap.docs[i].id);
-      const profilePictureRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
-      const profilePictureURL = await getDownloadURL(profilePictureRef);
+      // const profilePictureRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
+      const profilePictureURL = auth.currentUser.photoURL;
       await updateDoc(docRef, {authorDetails:{authorEmail:newEmail, authorName:fullName, authorProfilePicture:profilePictureURL, id:auth.currentUser.uid}})
     }
     window.location.reload()
@@ -89,12 +95,15 @@ export default function UserProfile({isAuth, setIsAuth}) {
 
   //This function lets the user to reset their password through an Email link
   async function resetPassword(){
-    const email = auth.currentUser.email;
-    await sendPasswordResetEmail(auth, email);
-    alert("A password reset email has been sent to you.")
     setIsAuth(false);
     localStorage.clear();
+    const email = auth.currentUser.email;
+    await sendPasswordResetEmail(auth, email);
+    await signOut(auth)
+    alert("A password reset email has been sent to you.")
+    navigate('/signIn')
   }
+  
   return (
     <div className="user-profile-page">
       <div className="loader-wrapper">
@@ -120,7 +129,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
               <button className="save-info-btn" onClick={e => saveChanges(e.target)}>Save New Email</button>
               </div>
             <div className="password-wrapper">
-              <input type="password" value={newPassword} onChange={e => setNewPassword(e.target.value)} disabled/>
+              <input type="password" value={newPassword}disabled/>
               <button className="edit-info-btn" onClick={e => resetPassword()}>Reset Password</button>
               <button className="save-info-btn" onClick={e => saveChanges(e.target)}>Save New Password</button>
             </div>
