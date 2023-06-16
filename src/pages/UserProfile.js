@@ -55,7 +55,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
   }
   //This function uploads the selected picture to the database
   async function uploadProfilePicture(file) {
-    let uploadButton = document.getElementsByClassName('uploadBtndisabled')[0]
+    let uploadButton = document.getElementsByClassName('uploadBtn')[0]
     uploadButton.disabled = true
     uploadButton.innerText = "Uploading..."
     let storageRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
