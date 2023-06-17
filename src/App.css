@@ -227,7 +227,7 @@ body{
     justify-content: center;
   }
   .sidebar{
-    height: 93vh;
+    height: 93dvh;
     width: 70%;
     position: absolute;
     right: 0px;
@@ -326,7 +326,7 @@ body{
     background-color: white;
   }
   .sidebar{
-    height: 93vh;
+    height: 93dvh;
     width: 99.5%;
     position: absolute;
     right: 0px;
