@@ -23,22 +23,6 @@ export default function UserProfile({isAuth, setIsAuth}) {
   const [newPassword, setNewPassword] = useState('******')
   //Current Profile Picture URL
   const [currentProfilePicture, setCurrentProfilePicture] = useState('');
-
-  //Fetches the User Profile Picture after Auth State Changes
-  // auth.onAuthStateChanged(()=>{
-  //   (async function fetchProfilePicture(){
-  //     const profilePictureRef = ref(storage, `Profile Pictures/${'ProfilePictureOf' + auth.currentUser.uid}`)
-  //     await getDownloadURL(profilePictureRef).then(url => {
-  //       setCurrentProfilePicture(url)
-  //       const loader = document.getElementsByClassName("loader-wrapper")[0]
-  //       loader.style.display = "none";
-  //     }).catch(() => {
-  //       const loader = document.getElementsByClassName("loader-wrapper")[0]
-  //       loader.style.display = "none"
-  //       setCurrentProfilePicture(userIcon)
-  //     })
-  // })();
-  // })
   
   auth.onAuthStateChanged(() => setCurrentProfilePicture(auth.currentUser.photoURL))
     //Function to Let users edit their data
@@ -135,7 +119,7 @@ export default function UserProfile({isAuth, setIsAuth}) {
             </div>
             </div>
             <div className="profile-picture-wrapper">
-            <img className="profile-picture" src={currentProfilePicture} alt="Current Profile File"/>
+            <img className="profile-picture" src={currentProfilePicture} alt="Current Profile Picture"/>
             <div className="profile-picture-inputs">
               <p>Profile Picture</p>
             <input className="profile-picture-input" type="file" onChange={e => preUpload(e.target.files[0])}/> <button className="uploadBtndisabled" disabled>Upload Image</button>

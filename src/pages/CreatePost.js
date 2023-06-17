@@ -36,13 +36,10 @@ export default function CreatePost({isAuth}) {
     returnToHomeBtn.style.display = "none";
 
     const collectionRef = collection(db, 'posts');
-    // const profilePictureRef = ref(storage, `Profile Pictures/ProfilePictureOf${auth.currentUser.uid}`)
-    // let profilePicture = '';
     let postPicture = ''
     let postVideo = ''
     let pictureName = ''
     let videoName = ''
-    // await getDownloadURL(profilePictureRef).then(url => profilePicture = url)
      
     if(picture){
       pictureName = `PostPictures/${nanoid()}`

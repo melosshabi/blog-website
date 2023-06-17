@@ -19,6 +19,11 @@ export default function Home({isAuth}) {
   const [postsList, setPostsList] = useState([]);
 
   useEffect(()=>{
+    auth.onAuthStateChanged(() => {
+      if(!auth.currentUser){
+        localStorage.clear()
+      }
+    })
     const fetchPosts = async () =>{
       const collectionRef = collection(db, 'posts')
       const queryPosts = query(collectionRef, orderBy('createdAt'))
