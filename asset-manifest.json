@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/blog-website/static/css/main.fdeac2ba.chunk.css",
-    "main.js": "/blog-website/static/js/main.2681354d.chunk.js",
-    "main.js.map": "/blog-website/static/js/main.2681354d.chunk.js.map",
+    "main.css": "/blog-website/static/css/main.766de47d.chunk.css",
+    "main.js": "/blog-website/static/js/main.e6401a5b.chunk.js",
+    "main.js.map": "/blog-website/static/js/main.e6401a5b.chunk.js.map",
     "runtime-main.js": "/blog-website/static/js/runtime-main.224f5150.js",
     "runtime-main.js.map": "/blog-website/static/js/runtime-main.224f5150.js.map",
-    "static/js/2.cf05ed02.chunk.js": "/blog-website/static/js/2.cf05ed02.chunk.js",
-    "static/js/2.cf05ed02.chunk.js.map": "/blog-website/static/js/2.cf05ed02.chunk.js.map",
+    "static/js/2.e326faba.chunk.js": "/blog-website/static/js/2.e326faba.chunk.js",
+    "static/js/2.e326faba.chunk.js.map": "/blog-website/static/js/2.e326faba.chunk.js.map",
     "index.html": "/blog-website/index.html",
-    "static/css/main.fdeac2ba.chunk.css.map": "/blog-website/static/css/main.fdeac2ba.chunk.css.map",
-    "static/js/2.cf05ed02.chunk.js.LICENSE.txt": "/blog-website/static/js/2.cf05ed02.chunk.js.LICENSE.txt",
+    "static/css/main.766de47d.chunk.css.map": "/blog-website/static/css/main.766de47d.chunk.css.map",
+    "static/js/2.e326faba.chunk.js.LICENSE.txt": "/blog-website/static/js/2.e326faba.chunk.js.LICENSE.txt",
     "static/media/caret-down.6a9f66c1.svg": "/blog-website/static/media/caret-down.6a9f66c1.svg",
     "static/media/edit.0c9ab544.svg": "/blog-website/static/media/edit.0c9ab544.svg",
     "static/media/image-icon.6d5fc28d.svg": "/blog-website/static/media/image-icon.6d5fc28d.svg",
     "static/media/plus-icon.9b65cc4b.svg": "/blog-website/static/media/plus-icon.9b65cc4b.svg",
-    "static/media/posts-icon.b652a470.svg": "/blog-website/static/media/posts-icon.b652a470.svg",
+    "static/media/posts-icon.8f92d091.svg": "/blog-website/static/media/posts-icon.8f92d091.svg",
     "static/media/trash-solid.2f043c97.svg": "/blog-website/static/media/trash-solid.2f043c97.svg",
     "static/media/user-solid.688763ca.svg": "/blog-website/static/media/user-solid.688763ca.svg",
     "static/media/video.c0a8092e.svg": "/blog-website/static/media/video.c0a8092e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.224f5150.js",
-    "static/js/2.cf05ed02.chunk.js",
-    "static/css/main.fdeac2ba.chunk.css",
-    "static/js/main.2681354d.chunk.js"
+    "static/js/2.e326faba.chunk.js",
+    "static/css/main.766de47d.chunk.css",
+    "static/js/main.e6401a5b.chunk.js"
   ]
 }
